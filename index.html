@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Synapse is a Sales-as-a-Service firm for industrial and manufacturing companies. We install and train full-time sales professionals and place them into your company.">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<title>Synapse Mfg</title>
+<title>Synapse Mfg | Embedded Sales Infrastructure for Industrial Companies</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -645,183 +643,6 @@
     color: var(--text-muted);
   }
 
-  /* === CASE STUDIES === */
-  .case-studies-section {
-    padding: 120px 48px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .case-studies-track {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 24px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-
-  .case-studies-track::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .case-studies-track::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .case-studies-track::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 3px;
-  }
-
-  .case-study-card {
-    min-width: 420px;
-    max-width: 420px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 36px;
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    transition: border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .case-study-card:hover {
-    border-color: var(--border);
-  }
-
-  .case-study-type {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    padding: 4px 10px;
-    background: var(--accent-dim);
-    border-radius: 4px;
-    display: inline-block;
-    width: fit-content;
-  }
-
-  .case-study-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-
-  .case-study-situation {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .case-study-goals {
-    margin-bottom: 20px;
-  }
-
-  .case-study-goals-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-
-  .case-study-goals ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .case-study-goals li {
-    font-size: 13px;
-    color: var(--text-secondary);
-    padding: 4px 0;
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .case-study-goals li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--text-muted);
-  }
-
-  .case-study-approach {
-    margin-bottom: 24px;
-  }
-
-  .case-study-approach-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-
-  .case-study-approach p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .case-study-results {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .case-study-results-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 12px;
-  }
-
-  .case-study-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .case-study-stat {
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    padding: 12px;
-  }
-
-  .case-study-stat-number {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .case-study-stat-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-
-  .case-study-takeaway {
-    margin-top: 20px;
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-style: italic;
-  }
-
   /* === FOOTER === */
   footer {
     padding: 48px;
@@ -874,8 +695,7 @@
   @media (max-width: 768px) {
     nav { padding: 0 24px; }
     .nav-links { display: none; }
-    .hero, section, .contrast-section, .week-section, .results-section, .case-studies-section, .cta-section { padding-left: 24px; padding-right: 24px; }
-    .case-study-card { min-width: 300px; max-width: 300px; padding: 24px; }
+    .hero, section, .contrast-section, .week-section, .results-section, .cta-section { padding-left: 24px; padding-right: 24px; }
     .contrast-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr; }
     .week-grid { grid-template-columns: 1fr; }
@@ -902,10 +722,11 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-tag">Embedded Sales for Industrial Companies</div>
-  <h1>We place a <em>dedicated salesperson</em> inside your industrial company.</h1>
+  <h1>We place a <em>dedicated sales rep</em> inside your industrial company.</h1>
   <p class="hero-sub">Not leads. Not appointments. A trained salesperson running outreach, closing deals, and growing accounts under your brand, as if they're on your payroll.</p>
   <div class="hero-actions">
     <a href="javascript:void(0)" onclick="window.location.href='mai'+'lto:gra'+'nt@synap'+'semfg.com'" class="btn-primary">See if we're a fit →</a>
+    <a href="javascript:void(0)" onclick="window.location.href='mai'+'lto:gra'+'nt@synap'+'semfg.com'" class="btn-secondary">See what we do for you</a>
   </div>
   <div class="hero-proof">
     <div class="proof-item">
@@ -1078,140 +899,6 @@
   </div>
 </div>
 
-<!-- CASE STUDIES -->
-<div class="section-divider"><hr></div>
-<div class="case-studies-section" id="case-studies">
-  <div class="section-tag">Case studies</div>
-  <div class="section-title">Real results from real shops.</div>
-  <p class="section-desc">Scroll through examples of how structured outbound transformed capacity, pipeline, and revenue for industrial companies.</p>
-  <div class="case-studies-track">
-
-    <!-- Case Study 1: Precision Machining -->
-    <div class="case-study-card">
-      <div class="case-study-type">Precision Machining</div>
-      <div class="case-study-title">Michigan Machine Shop — Filling Open Capacity</div>
-      <div class="case-study-situation">A Michigan machine shop lost a major customer. Their newest screw machine was 90% open capacity. Sales relied on referrals and one inside rep routing everything to the GM. There was no structured outbound activity.</div>
-      <div class="case-study-goals">
-        <div class="case-study-goals-label">Goals</div>
-        <ul>
-          <li>Fill open capacity quickly</li>
-          <li>Generate predictable RFQs</li>
-          <li>Work with fewer customers that offered more volume</li>
-        </ul>
-      </div>
-      <div class="case-study-approach">
-        <div class="case-study-approach-label">What changed</div>
-        <p>Market repositioned away from automotive, medical, and aerospace toward electronics, agriculture, energy, and consumer goods — targeting companies above $50M revenue. Phone-first outreach: 113 calls/day, ~2,000/month with dedicated inside salesperson and sales manager oversight.</p>
-      </div>
-      <div class="case-study-results">
-        <div class="case-study-results-label">12-Month Results</div>
-        <div class="case-study-stats">
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">42</div>
-            <div class="case-study-stat-label">RFQs</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$8.9M</div>
-            <div class="case-study-stat-label">Pipeline</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$1.5M</div>
-            <div class="case-study-stat-label">New annual revenue</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">6</div>
-            <div class="case-study-stat-label">New customers</div>
-          </div>
-        </div>
-        <div class="case-study-takeaway">If your shop relies heavily on referrals, growth can reverse quickly when one account leaves. Structured outbound reduces that dependency.</div>
-      </div>
-    </div>
-
-    <!-- Case Study 2: Fabrication -->
-    <div class="case-study-card">
-      <div class="case-study-type">Fabrication</div>
-      <div class="case-study-title">Illinois Fabrication Shop — Improving Account Mix</div>
-      <div class="case-study-situation">An Illinois-based fabrication shop had too many small accounts and too many low-revenue jobs. The shop was busy but margins were under pressure. The goal was not to increase volume — it was to improve account mix.</div>
-      <div class="case-study-goals">
-        <div class="case-study-goals-label">Goals</div>
-        <ul>
-          <li>Offload low-margin customers</li>
-          <li>Replace them with higher-revenue programs</li>
-          <li>Generate qualified RFQs consistently</li>
-        </ul>
-      </div>
-      <div class="case-study-approach">
-        <div class="case-study-approach-label">What was implemented</div>
-        <p>Targeted manufacturers in agriculture, mining, energy, construction, Tier 2 automotive, and machinery — companies above $100M revenue. Phone-first outreach: 111 calls/day, ~2,000/month with dedicated inside salesperson and weekly CRM/QA tracking.</p>
-      </div>
-      <div class="case-study-results">
-        <div class="case-study-results-label">12-Month Results</div>
-        <div class="case-study-stats">
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">76</div>
-            <div class="case-study-stat-label">RFQs</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$13.9M</div>
-            <div class="case-study-stat-label">Pipeline</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$2.0M</div>
-            <div class="case-study-stat-label">New annual revenue</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">5</div>
-            <div class="case-study-stat-label">New customers</div>
-          </div>
-        </div>
-        <div class="case-study-takeaway">If your shop is operating at capacity but margin is declining, the issue may be account mix rather than volume. Outbound gave them leverage in customer selection.</div>
-      </div>
-    </div>
-
-    <!-- Case Study 3: Injection Molding -->
-    <div class="case-study-card">
-      <div class="case-study-type">Injection Molding</div>
-      <div class="case-study-title">Global Injection Molder — Accessing Tier 1 Decision Makers</div>
-      <div class="case-study-situation">A global IATF-certified injection molder with a plant in central Mexico had capacity and capability but lacked consistent access to engineering and purchasing at Tier 1 suppliers. Previous sales reps had limited traction.</div>
-      <div class="case-study-goals">
-        <div class="case-study-goals-label">Goals</div>
-        <ul>
-          <li>Fill open capacity with transfer business</li>
-          <li>Generate qualified RFQs consistently</li>
-          <li>Build inside sales and account management support</li>
-        </ul>
-      </div>
-      <div class="case-study-approach">
-        <div class="case-study-approach-label">What was implemented</div>
-        <p>Identified Tier 1 suppliers with Mexican plants buying within required tonnage range. Mapped accounts across engineering, purchasing, quality, and corporate contacts. Phone-first outreach: 95 calls/day, ~2,000/month. Messaging centered on IATF accreditation, global sites, and equipment fit.</p>
-      </div>
-      <div class="case-study-results">
-        <div class="case-study-results-label">12-Month Results</div>
-        <div class="case-study-stats">
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">65</div>
-            <div class="case-study-stat-label">RFQs</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$26.2M</div>
-            <div class="case-study-stat-label">Pipeline</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$1.8M</div>
-            <div class="case-study-stat-label">New annual revenue</div>
-          </div>
-          <div class="case-study-stat">
-            <div class="case-study-stat-number">$3.1M</div>
-            <div class="case-study-stat-label">Awarded future programs</div>
-          </div>
-        </div>
-        <div class="case-study-takeaway">If you are an automotive supplier relying on inbound or historical networks, that creates exposure. A direct outbound process reduces that risk.</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 <!-- WHO THIS IS FOR -->
 <div class="section-divider"><hr></div>
 <section id="fit">
@@ -1256,14 +943,11 @@
 <footer>
   <div class="footer-left">Synapse Mfg</div>
   <div class="footer-right" style="display: flex; align-items: center; gap: 16px;">
+    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+    <a href="terms.html" style="color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">Terms &amp; Conditions</a>
+    <a href="sms-policy.html" style="color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">SMS Policy</a>
     <a href="https://www.linkedin.com/company/synapsemfg/" rel="noopener noreferrer" target="_blank" style="color: var(--text-muted); text-decoration: none; display: inline-flex; transition: color 0.2s;">
       <svg width="20" height="20" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_li)"><path d="M16.6676 0.666992H1.32891C0.594141 0.666992 0 1.24707 0 1.96426V17.3662C0 18.0834 0.594141 18.667 1.32891 18.667H16.6676C17.4023 18.667 18 18.0834 18 17.3697V1.96426C18 1.24707 17.4023 0.666992 16.6676 0.666992ZM5.34023 16.0057H2.66836V7.41348H5.34023V16.0057ZM4.0043 6.24277C3.14648 6.24277 2.45391 5.5502 2.45391 4.6959C2.45391 3.8416 3.14648 3.14902 4.0043 3.14902C4.85859 3.14902 5.55117 3.8416 5.55117 4.6959C5.55117 5.54668 4.85859 6.24277 4.0043 6.24277ZM15.3387 16.0057H12.6703V11.8291C12.6703 10.8342 12.6527 9.55098 11.2816 9.55098C9.89297 9.55098 9.68203 10.6373 9.68203 11.7588V16.0057H7.01719V7.41348H9.57656V8.5877H9.61172C9.9668 7.9127 10.8387 7.19902 12.1359 7.19902C14.8395 7.19902 15.3387 8.97793 15.3387 11.2912V16.0057Z" fill="currentColor"/></g><defs><clipPath id="clip0_li"><rect width="18" height="18" fill="white" transform="translate(0 0.666992)"/></clipPath></defs></svg>
     </a>
     <a href="https://www.youtube.com/@synapsemfg" rel="noopener noreferrer" target="_blank" style="color: var(--text-muted); text-decoration: none; display: inline-flex; transition: color 0.2s;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/></svg>
-    </a>
-    <span style="color: var(--text-muted); font-size: 14px;">© 2025 Synapse Mfg</span>
-  </div>
-</footer>
-</body>
-</html>
+      <svg width="20" height="20" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.8207 6.06709C17.8207 6.06709 17.6449 4.82607 17.1035 4.28115C16.418 3.56396 15.6516 3.56045 15.3 3.51826C12.7828 3.33545 9.00352 3.33545 9.00352 3.33545H8.99648C8.99648 3.33545 5.21719 3.33545 2.7 3.51826C2.34844 3.56045 1.58203 3.56396 0.896484 4.28115C0.355078 4.82607 0.182812 6.06709 0.182812 6.06709C0.182812 6.06709 0 7.52607 0 8.98154V10.3456C0 11.8011 0.179297 13.2601 0.179297 13.2601C0.179297 13.2601 0.355078 14.5011 0.892969 15.046C1.57852 15.7632 2.47852 15.7386 2.8793 15.8159C4.3207 15.953 9 15.9952 9 15.9952C9 15.9952 12.7828 15.9882 15.3 15.8089C15.6516 15.7667 16.418 15.7632 17.1035 15.046C17.6449 14.5011 17.8207 13.2601 17.8207 13.2601C17.8207 13.2601 18 11.8046 18 10.3456V8.98154C18 7.52607 17.8207 6.06709 17.8207 6.06709ZM7.

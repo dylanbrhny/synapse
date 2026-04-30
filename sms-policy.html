@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS Policy | Synapse Mfg</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #111114;
+    --bg-card: #16161a;
+    --border: #2a2a32;
+    --border-subtle: #1e1e26;
+    --text-primary: #e8e6e3;
+    --text-secondary: #8a8a96;
+    --text-muted: #5a5a66;
+    --accent: #4a9eff;
+    --accent-dim: rgba(74, 158, 255, 0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .nav-back {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .nav-back:hover { color: var(--text-primary); }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 128px 48px 96px;
+  }
+
+  .doc-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    background: rgba(74, 158, 255, 0.08);
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  li {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover { text-decoration: underline; }
+
+  .opt-in-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 32px 0;
+  }
+
+  .opt-in-box h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .step-content { flex: 1; }
+
+  .step-content p { margin-bottom: 4px; }
+
+  .sample-msg {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    color: var(--text-primary);
+  }
+
+  .keyword-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .keyword-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .keyword-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .keyword-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 48px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    main { padding: 112px 24px 64px; }
+    h1 { font-size: 32px; }
+    .keyword-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Synapse Mfg</a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <span class="doc-tag">Legal</span>
+  <h1>SMS Messaging Policy</h1>
+  <div class="updated">Last updated: April 30, 2026</div>
+
+  <h2>Overview</h2>
+  <p>Synapse Mfg operates outbound sales programs on behalf of industrial manufacturing clients. Our sales representatives contact prospects via phone, email, and LinkedIn. SMS is used only when a prospect explicitly requests it during an active sales conversation, typically to receive requested materials such as capabilities brochures, spec sheets, or case studies.</p>
+
+  <h2>How Prospects Opt In</h2>
+  <p>Consent to receive SMS messages from Synapse Mfg is obtained through a clear, two-step verbal-plus-text confirmation process during an active sales conversation:</p>
+
+  <div class="opt-in-box">
+    <h3>Opt-In Process</h3>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <p><strong>Prospect Request</strong></p>
+        <p>During a phone call, email exchange, or LinkedIn conversation, a prospect explicitly requests that materials be sent via text message (e.g., "text me the brochure" or "send the spec sheet to my mobile").</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <p><strong>Documented Consent</strong></p>
+        <p>Our representative records the prospect's name, phone number, date, and method of consent in our internal CRM before any SMS is sent.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <p><strong>Confirmation Text</strong></p>
+        <p>The prospect receives a one-time confirmation text:</p>
+        <div class="sample-msg">Reply YES to confirm you'd like to receive the materials you requested via text from Synapse Mfg. Msg &amp; data rates may apply. Reply STOP to opt-out.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <p><strong>Materials Sent</strong></p>
+        <p>Only after the prospect replies YES does Synapse Mfg send the requested materials via SMS or MMS.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What Prospects Receive</h2>
+  <p>SMS messages from Synapse Mfg are limited to materials a prospect has specifically requested. Examples include:</p>
+  <ul>
+    <li>Capabilities brochures and company overviews</li>
+    <li>Product or equipment spec sheets</li>
+    <li>Case studies and reference documents</li>
+    <li>Brief follow-up notes related to materials previously sent</li>
+  </ul>
+  <p>Messaging frequency varies based on the prospect's request and stage in the sales conversation. Synapse Mfg does not send promotional, marketing, or bulk SMS campaigns.</p>
+
+  <h2>Keyword Responses</h2>
+
+  <div class="keyword-grid">
+    <div class="keyword-card">
+      <div class="keyword-label">REPLY: HELP</div>
+      <p>Thank you for contacting Synapse Mfg. For support, email grant@synapsemfg.com or visit synapsemfg.com. Reply STOP to opt-out.</p>
+    </div>
+    <div class="keyword-card">
+      <div class="keyword-label">REPLY: STOP</div>
+      <p>You have successfully opted out of messages from Synapse Mfg. You will receive no further messages. Reply START to resubscribe.</p>
+    </div>
+  </div>
+
+  <h2>Data Privacy</h2>
+  <p>Phone numbers and SMS opt-in consent collected by Synapse Mfg are not shared with third parties or affiliates for marketing or promotional purposes. SMS opt-in is obtained separately from any other communication channel and is treated as a distinct consent under our <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Message and Data Rates</h2>
+  <p>Standard message and data rates may apply based on your mobile carrier and service plan. Synapse Mfg does not charge recipients to receive SMS messages.</p>
+
+  <h2>Carrier Disclaimer</h2>
+  <p>Wireless carriers are not liable for delayed or undelivered messages.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>Synapse Mfg may update this SMS Policy from time to time. The "Last updated" date at the top of this page indicates the most recent revision.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about our SMS practices, opt-in process, or to request manual opt-out, contact us at:</p>
+  <p>
+    Synapse Mfg<br>
+    Email: <a href="mailto:grant@synapsemfg.com">grant@synapsemfg.com</a><br>
+    Website: <a href="https://synapsemfg.com">synapsemfg.com</a>
+  </p>
+</main>
+
+<footer>
+  <div>Synapse Mfg</div>
+  <div style="display: flex; gap: 16px;">
+    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
+    <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms</a>
+    <a href="sms-policy.html" style="color: var(--text-muted); text-decoration: none;">SMS Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions | Synapse Mfg</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #111114;
+    --bg-card: #16161a;
+    --border: #2a2a32;
+    --border-subtle: #1e1e26;
+    --text-primary: #e8e6e3;
+    --text-secondary: #8a8a96;
+    --text-muted: #5a5a66;
+    --accent: #4a9eff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
+    line-height: 1.7;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .nav-back {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .nav-back:hover { color: var(--text-primary); }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 128px 48px 96px;
+  }
+
+  .doc-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    background: rgba(74, 158, 255, 0.08);
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+
+  .updated {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+
+  li {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover { text-decoration: underline; }
+
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 48px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    main { padding: 112px 24px 64px; }
+    h1 { font-size: 32px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Synapse Mfg</a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <span class="doc-tag">Legal</span>
+  <h1>Terms &amp; Conditions</h1>
+  <div class="updated">Last updated: April 30, 2026</div>
+
+  <h2>1. Agreement</h2>
+  <p>These Terms &amp; Conditions ("Terms") govern your use of the Synapse Mfg website at synapsemfg.com and any related services. By accessing this website or engaging Synapse Mfg for services, you agree to these Terms. If you do not agree, do not use the website or our services.</p>
+
+  <h2>2. Services</h2>
+  <p>Synapse Mfg provides embedded sales infrastructure for industrial manufacturers. Our service involves placing dedicated sales representatives inside client organizations and operating outbound sales programs under client branding. Specific service terms, fees, and deliverables are governed by separate written service agreements between Synapse Mfg and each client.</p>
+
+  <h2>3. Use of Website</h2>
+  <p>You agree to use the synapsemfg.com website only for lawful purposes. You agree not to:</p>
+  <ul>
+    <li>Use the website in any way that violates applicable law</li>
+    <li>Attempt to gain unauthorized access to any portion of the website</li>
+    <li>Interfere with the operation of the website or its security features</li>
+    <li>Scrape, harvest, or otherwise extract data from the website without permission</li>
+    <li>Use the website to transmit malware or harmful code</li>
+  </ul>
+
+  <h2>4. Intellectual Property</h2>
+  <p>All content on synapsemfg.com — including text, graphics, logos, branding, case studies, and design — is the property of Synapse Mfg or its licensors and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without prior written permission.</p>
+
+  <h2>5. Client Confidentiality</h2>
+  <p>References to specific manufacturers and Fortune 500 relationships on this website refer to commercial relationships and purchase orders generated through our sales programs. Use of these names does not imply endorsement. Detailed engagement information is confidential and governed by client-specific agreements.</p>
+
+  <h2>6. No Warranty</h2>
+  <p>The website is provided "as is" without warranties of any kind, express or implied. Synapse Mfg does not guarantee that the website will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+  <h2>7. Limitation of Liability</h2>
+  <p>To the fullest extent permitted by law, Synapse Mfg shall not be liable for any indirect, incidental, consequential, or punitive damages arising from your use of the website. Our total liability for any claim related to the website shall not exceed one hundred U.S. dollars ($100).</p>
+
+  <h2>8. Communications</h2>
+  <p>By providing your contact information to Synapse Mfg or to our representatives operating on behalf of clients, you consent to receive business communications via email, phone, and where explicitly opted in, SMS. You may opt out of any communication channel at any time. See our <a href="sms-policy.html">SMS Policy</a> for details on text messaging.</p>
+
+  <h2>9. Third-Party Links</h2>
+  <p>The website may contain links to third-party websites. Synapse Mfg is not responsible for the content, privacy practices, or terms of any third-party website.</p>
+
+  <h2>10. Changes to Terms</h2>
+  <p>We may revise these Terms at any time. The "Last updated" date indicates the most recent revision. Continued use of the website after changes constitutes acceptance of the revised Terms.</p>
+
+  <h2>11. Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of Florida, without regard to conflict of law principles. Any disputes arising from these Terms shall be resolved in the courts of Florida.</p>
+
+  <h2>12. Contact</h2>
+  <p>For questions about these Terms, contact us at:</p>
+  <p>
+    Synapse Mfg<br>
+    Email: <a href="mailto:grant@synapsemfg.com">grant@synapsemfg.com</a><br>
+    Website: <a href="https://synapsemfg.com">synapsemfg.com</a>
+  </p>
+</main>
+
+<footer>
+  <div>Synapse Mfg</div>
+  <div style="display: flex; gap: 16px;">
+    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
+    <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms</a>
+    <a href="sms-policy.html" style="color: var(--text-muted); text-decoration: none;">SMS Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
