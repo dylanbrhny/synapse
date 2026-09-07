@@ -200,7 +200,7 @@
 
     // Penalty budget out of 100. Worst realistic combination (1 number,
     // zero data providers, TitanX off) still lands at a 40% floor, not
-    // zero: understaffed reps are still reps, not switched off. Numbers
+    // zero: understaffed salespeople are still salespeople, not switched off. Numbers
     // alone can only cost 5 points; data alone up to 25; TitanX is the
     // single biggest lever because it changes who gets called, not just
     // how well the calling is supported.
@@ -275,7 +275,7 @@
       // outputs
       document.getElementById('sim-reps-val').textContent = simReps;
       document.getElementById('sim-reps-note').textContent = 'Loaded at 1.3 times for payroll tax, benefits, and management: about ' + money(repCost) + '/yr' + (simReps > 1 ? ' each, ' + money(repsCost) + ' total.' : ' each.');
-      document.getElementById('sim-numbers-val').textContent = (n >= 25 ? '25+' : n) + ' · ' + money(numbersPerRep) + '/yr per rep';
+      document.getElementById('sim-numbers-val').textContent = (n >= 25 ? '25+' : n) + ' · ' + money(numbersPerRep) + '/yr per salesperson';
       document.getElementById('sim-data-val').textContent = dataOn + ' of 6 · ' + money(dataCost) + '/yr per seat';
       document.getElementById('sim-prod').textContent = prodPct + '%';
       document.getElementById('sim-convos').textContent = convos;
@@ -307,16 +307,16 @@
         : 'Average annual contracts. Missing ' + missingCount + ' providers leaves overlapping holes: wrong numbers, dead records, missed contacts.';
 
       document.getElementById('sim-titan-note').textContent = titan
-        ? 'On: dead and disconnected numbers are filtered out before a rep ever dials them.'
-        : 'Off saves ' + money(TITAN_COST * simReps) + ', but reps spend real hours dialing numbers that were never going to connect in the first place.';
+        ? 'On: dead and disconnected numbers are filtered out before a salesperson ever dials them.'
+        : 'Off saves ' + money(TITAN_COST * simReps) + ', but salespeople spend real hours dialing numbers that were never going to connect in the first place.';
 
       var msg = document.getElementById('sim-msg');
       var m, mColor;
       if (!titan) {
-        m = 'Cutting TitanX means reps burn hours on numbers that were never going to connect. You are still paying the reps either way, so every conversation now costs ' + money(cpc) + '.';
+        m = 'Cutting TitanX means salespeople burn hours on numbers that were never going to connect. You are still paying the salespeople either way, so every conversation now costs ' + money(cpc) + '.';
         mColor = '#fb923c';
       } else if (missingCount >= 4) {
-        m = 'Missing this many providers, the gaps overlap. Reps spend more of the day chasing records that were never reachable, at ' + money(cpc) + ' per conversation.';
+        m = 'Missing this many providers, the gaps overlap. Salespeople spend more of the day chasing records that were never reachable, at ' + money(cpc) + ' per conversation.';
         mColor = '#fb923c';
       } else if (missingCount >= 2) {
         m = 'A couple of missing providers compounds faster than it looks. Coverage has real holes now, and cost per conversation is drifting up toward ' + money(cpc) + '.';
@@ -327,7 +327,7 @@
           : 'Fully tuned. This is the stack we run for every client, at what it costs to assemble yourself, before anyone manages it.';
         mColor = '#4a9eff';
       } else if (total < 125000 * simReps) {
-        m = 'Cheaper on paper, worse per conversation. At ' + money(cpc) + ' per ICP conversation, some of what you saved on the stack comes back as rep hours spent on dead ends.';
+        m = 'Cheaper on paper, worse per conversation. At ' + money(cpc) + ' per ICP conversation, some of what you saved on the stack comes back as salesperson hours spent on dead ends.';
         mColor = '#fb923c';
       } else {
         m = 'Working, but there is headroom. Add the missing layer and cost per conversation drops as output climbs.';
@@ -340,21 +340,21 @@
       var mathEl = document.getElementById('sim-math');
       if (mathEl) {
         var repLine = simReps > 1
-          ? money(salary) + ' salary × 1.3 loaded = <b>' + money(repCost) + '</b>/yr each × ' + simReps + ' reps = <b>' + money(repsCost) + '</b>'
+          ? money(salary) + ' salary × 1.3 loaded = <b>' + money(repCost) + '</b>/yr each × ' + simReps + ' salespeople = <b>' + money(repsCost) + '</b>'
           : money(salary) + ' salary × 1.3 loaded = <b>' + money(repCost) + '</b>/yr';
         var dataLine = dataOn > 0
           ? dataOn + ' of 6 providers (' + dataNames.join(', ') + ') = <b>' + money(dataCost) + '</b>/yr per seat'
           : 'no data providers selected = <b>$0</b>/yr';
         var costLines = [];
         costLines.push(repLine);
-        costLines.push('+ ' + n + ' numbers × $' + NUM_COST_MO + '/mo × 12 × ' + simReps + ' rep' + (simReps > 1 ? 's' : '') + ' = <b>' + money(numbersCost) + '</b>');
+        costLines.push('+ ' + n + ' numbers × $' + NUM_COST_MO + '/mo × 12 × ' + simReps + (simReps > 1 ? ' salespeople' : ' salesperson') + ' = <b>' + money(numbersCost) + '</b>');
         costLines.push('+ ' + dataLine);
         costLines.push('+ TitanX number screening: ' + (titan ? '<b>' + money(TITAN_COST * simReps) + '</b>' : '<b>$0</b> (off)'));
         costLines.push('+ part-time account follow-up (in-house): ' + (support ? '<b>' + money(SUPPORT_COST) + '</b>' : '<b>$0</b> (off)'));
         costLines.push('= <span class="g"><b>' + money(total) + '</b></span> total, per year');
 
         var prodLine = '100 − ' + pNum.toFixed(1) + ' (numbers) − ' + pData.toFixed(1) + ' (data) − ' + pTitan + ' (TitanX) = <b>' + prodPct + '%</b> productivity';
-        var convoLine = prodPct + '% × 12 max/day = <b>' + convos + '</b> conversations/day × 250 days × ' + simReps + ' rep' + (simReps > 1 ? 's' : '') + ' = <b>' + annualConvos.toLocaleString() + '</b>/yr';
+        var convoLine = prodPct + '% × 12 max/day = <b>' + convos + '</b> conversations/day × 250 days × ' + simReps + (simReps > 1 ? ' salespeople' : ' salesperson') + ' = <b>' + annualConvos.toLocaleString() + '</b>/yr';
         var cpcLine = money(total) + ' ÷ ' + annualConvos.toLocaleString() + ' = <span class="g"><b>' + money(cpc) + '</b> per ICP conversation</span>';
 
         mathEl.innerHTML = costLines.join('<br>') + '<br><br>' + prodLine + '<br>' + convoLine + '<br>' + cpcLine;
