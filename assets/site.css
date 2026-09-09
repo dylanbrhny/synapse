@@ -1993,3 +1993,9 @@ footer li a:hover{color:var(--text-primary)}
 .prose .proof-name{margin:0 0 8px}
 .prose .proof-footnote{font-size:13px;margin-top:20px}
 .prose .proof-checks{padding-left:0}
+
+/* vendor chips with raster icons */
+.vendor-logo{display:flex;align-items:center}
+.vendor-logo img{height:22px;width:22px;display:block;border-radius:5px}
+.vendor-name{font-weight:600;font-size:14px;margin-left:8px;color:var(--text-primary)}
+a.vendor-chip{text-decoration:none;color:inherit}
