@@ -1999,3 +1999,12 @@ footer li a:hover{color:var(--text-primary)}
 .vendor-logo img{height:22px;width:22px;display:block;border-radius:5px}
 .vendor-name{font-weight:600;font-size:14px;margin-left:8px;color:var(--text-primary)}
 a.vendor-chip{text-decoration:none;color:inherit}
+
+/* sector logo grid (replaces the marquee) */
+.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 48px;text-align:left;max-width:1000px;margin:0 auto}
+.sector-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.sector-logos{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.sector-logos img{height:36px;width:auto;object-fit:contain;opacity:.85;transition:opacity .3s}
+.sector-logos img:hover{opacity:1}
+.sector-logos .logo-text{font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--text-secondary);padding:6px 10px;border:1px solid var(--border-subtle);border-radius:6px}
+@media (max-width:768px){.sector-grid{grid-template-columns:1fr;gap:24px}.sector-logos img{height:30px}}
