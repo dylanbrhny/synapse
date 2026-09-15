@@ -167,9 +167,9 @@
   });
 
   // --- mobile nav menu: close after a link is chosen ---
-  document.querySelectorAll('.nav-menu a').forEach(function (a) {
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
     a.addEventListener('click', function () {
-      var d = a.closest('details');
+      var d = document.querySelector('.nav-menu');
       if (d) d.removeAttribute('open');
     });
   });
