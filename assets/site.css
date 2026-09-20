@@ -2025,7 +2025,8 @@ footer .footer-heading{font-size:12px;color:var(--text-muted);text-transform:upp
 }
 
 /* homepage inline calendar */
+:root{color-scheme:dark}
 .cta-section .cta-body{max-width:1200px;width:100%}
-.cal-home{width:100%;min-height:760px;margin:16px auto 20px;background:#0a0a0c;border:0;border-radius:0}
-.cal-home iframe{width:100%!important;min-height:760px;background:#0a0a0c;display:block}
-@media (max-width:768px){.cal-home,.cal-home iframe{min-height:880px}}
+.cal-home{width:100%;min-height:600px;margin:16px auto 20px;background:#0a0a0c;color-scheme:dark;border:0;border-radius:0}
+.cal-home iframe,#cal-inline iframe{width:100%!important;background:#0a0a0c;color-scheme:dark;display:block}
+#cal-inline{color-scheme:dark;background:#0a0a0c}
