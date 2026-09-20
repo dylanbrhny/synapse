@@ -2030,3 +2030,20 @@ footer .footer-heading{font-size:12px;color:var(--text-muted);text-transform:upp
 .cal-home{width:100%;min-height:600px;margin:16px auto 20px;background:#0a0a0c;color-scheme:dark;border:0;border-radius:0}
 .cal-home iframe,#cal-inline iframe{width:100%!important;background:#0a0a0c;color-scheme:dark;display:block}
 #cal-inline{color-scheme:dark;background:#0a0a0c}
+
+/* request-information form */
+.req-form{display:grid;gap:18px;margin:8px 0 40px}
+.req-row{display:grid;gap:6px}
+.req-row label{font-size:13px;font-weight:600;color:var(--text-secondary)}
+.req-required,.req-optional{font-weight:400;color:var(--text-muted)}
+.req-form input[type=text],.req-form input[type=email],.req-form input[type=tel],.req-form select,.req-form textarea{width:100%;background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font:inherit;font-size:15px}
+.req-form input:focus,.req-form select:focus,.req-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.req-consent{border:1px solid var(--border-subtle);border-radius:10px;padding:16px 18px;display:grid;gap:12px;margin:0}
+.req-consent legend{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);padding:0 6px}
+.req-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.55;color:var(--text-secondary)}
+.req-check input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:var(--accent)}
+.req-note{font-size:12px;color:var(--text-muted);margin:0}
+.req-note a,.req-check a{color:var(--accent)}
+.req-form .btn-primary{justify-self:start;border:0;cursor:pointer;font:inherit;font-weight:600}
+.footer-phone a{color:var(--text-muted);text-decoration:none}
+.footer-phone a:hover{color:var(--text-primary)}
