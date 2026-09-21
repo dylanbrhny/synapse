@@ -240,14 +240,14 @@
       var salary = currentSalary();
       var repCost = Math.round(salary * LOADED_X);
       var n = parseInt(sNum.value, 10);
-      var titan = sTitan.getAttribute('aria-checked') === 'true';
-      var support = sSupport.getAttribute('aria-checked') === 'true';
+      var titan = sTitan.getAttribute('data-on') === 'true';
+      var support = sSupport.getAttribute('data-on') === 'true';
 
       // data coverage + per-seat cost from individually selected providers
       var dataWeight = 0, dataCost = 0, dataOn = 0;
       var dataNames = [];
       provEls.forEach(function (el) {
-        if (el.getAttribute('aria-pressed') === 'true') {
+        if (el.getAttribute('data-on') === 'true') {
           dataWeight += parseFloat(el.getAttribute('data-weight'));
           dataCost += parseFloat(el.getAttribute('data-cost'));
           dataOn++;
@@ -375,7 +375,7 @@
 
     provEls.forEach(function (el) {
       el.addEventListener('click', function () {
-        el.setAttribute('aria-pressed', el.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+        el.setAttribute('data-on', el.getAttribute('data-on') === 'true' ? 'false' : 'true');
         simCompute();
       });
     });
@@ -383,7 +383,7 @@
     // native switch buttons: click covers Space/Enter; the row is a big hit area
     function simBindSwitch(btn) {
       btn.addEventListener('click', function () {
-        btn.setAttribute('aria-checked', btn.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+        btn.setAttribute('data-on', btn.getAttribute('data-on') === 'true' ? 'false' : 'true');
         simCompute();
       });
       var row = btn.closest('.sim-toggle-row');
