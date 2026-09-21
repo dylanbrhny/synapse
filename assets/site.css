@@ -2061,3 +2061,5 @@ footer .footer-heading{font-size:12px;color:var(--text-muted);text-transform:upp
 .optin-disclosure{font-size:12px;color:var(--text-muted);margin:0;line-height:1.6}
 .optin-disclosure a{color:var(--accent)}
 .optin button{justify-self:start;background:var(--accent);color:#000;border:0;border-radius:8px;padding:12px 22px;font:inherit;font-weight:600;cursor:pointer}
+
+.optin select,.optin textarea{width:100%;background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font:inherit;font-size:15px}
