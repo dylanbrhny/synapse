@@ -31,7 +31,7 @@
     --border-subtle: #1e1e26;
     --text-primary: #e8e6e3;
     --text-secondary: #8a8a96;
-    --text-muted: #5a5a66;
+    --text-muted: #86869a;
     --accent: #4a9eff;
   }
 
@@ -179,16 +179,17 @@
     h1 { font-size: 32px; }
     footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
   }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:absolute;left:-999px;top:8px;background:var(--accent);color:#000;padding:8px 12px;border-radius:6px;z-index:2000;text-decoration:none;font-weight:600}.skip-link:focus{left:8px}a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}main p a,main li a,main td a{text-decoration:underline;text-underline-offset:2px}
 </style>
 </head>
 <body>
-
+<a class="skip-link" href="#content">Skip to content</a>
 <nav aria-label="Primary">
   <a href="/" class="nav-logo">Synapse Mfg</a>
   <a href="/" class="nav-back">← Back to home</a>
 </nav>
 
-<main>
+<main id="content">
   <span class="doc-tag">Legal</span>
   <nav aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Terms &amp; Conditions</li></ol></nav>
   <h1>Terms &amp; Conditions</h1>
@@ -260,6 +261,8 @@
     <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Privacy</a>
     <a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Terms</a>
     <a href="sms-policy.html" style="color: var(--text-muted); text-decoration: none;">SMS Policy</a>
+    <a href="/accessibility/" style="color: var(--text-muted); text-decoration: none;">Accessibility</a>
+    <a href="/accessibility/" style="color: var(--text-muted); text-decoration: none;">Accessibility</a>
     <a href="https://synapse-ops-dashboard.vercel.app/rep-dashboards" rel="nofollow noopener" style="color: var(--text-muted); text-decoration: none;">Employee login</a>
     <a href="https://synapse-ops-dashboard.vercel.app/client/login" rel="nofollow noopener" style="color: var(--text-muted); text-decoration: none;">Client login</a>
   </div>
