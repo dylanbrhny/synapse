@@ -1,0 +1,37 @@
+# Pings IndexNow (Bing, Yandex and partners) with the pages each deploy changed.
+name: IndexNow
+
+on:
+  workflow_run:
+    workflows: ["Deploy static content to Pages"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  submit:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the deployed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
+      - name: Find the previous successful deploy
+        id: prev
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
+        run: |
+          sha=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$WORKFLOW_ID" --branch main --status success --limit 10 \
+            --json databaseId,headSha --jq "[.[] | select(.databaseId < $RUN_ID)][0].headSha // \"\"")
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Submit changed pages
+        env:
+          PREV_SHA: ${{ steps.prev.outputs.sha }}
+        run: python3 .github/indexnow_submit.py
