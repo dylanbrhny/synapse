@@ -2130,3 +2130,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .sector-logos img{height:36px;width:auto;max-width:160px;object-fit:contain}
 .sector-grid{gap:30px 56px}
 .sector-logos{gap:14px 22px}
+/* live meetings card 2026-10-17 */
+.hero-preview-body{overflow:hidden}
+.meet-list{display:grid}
+.meet-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--border-subtle);opacity:0;transform:translateY(8px);animation:meetIn .5s ease both;animation-delay:calc(var(--i)*.45s + .3s)}
+.meet-row:last-child{border-bottom:0}
+.meet-who{display:grid;gap:2px;min-width:0}
+.meet-who strong{font-size:13px;font-weight:600;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meet-who span{font-size:12px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meet-when{font-size:12px;color:var(--text-secondary);white-space:nowrap;font-variant-numeric:tabular-nums}
+.meet-status{position:relative;font-size:10px;font-weight:600;padding:3px 8px;border-radius:5px;border:1px solid var(--border);color:var(--text-secondary);white-space:nowrap;min-width:66px;text-align:center}
+.meet-status.verified{color:var(--green);border-color:rgba(52,211,153,.35)}
+.meet-status.pending{animation:meetFlip .4s ease both;animation-delay:3.3s}
+.meet-status.pending .s2{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;animation:meetShow .3s ease both;animation-delay:3.3s}
+.meet-status.pending .s1{animation:meetHide .3s ease both;animation-delay:3.3s}
+@keyframes meetIn{to{opacity:1;transform:none}}
+@keyframes meetFlip{to{color:var(--green);border-color:rgba(52,211,153,.35)}}
+@keyframes meetShow{to{opacity:1}}
+@keyframes meetHide{to{opacity:0}}
+.case-card{padding:28px 0 8px;border-top:1px solid var(--border-subtle)}
+.case-card:first-of-type{border-top:0;padding-top:0}
+.case-stat{display:flex;align-items:baseline;gap:12px;margin:14px 0 14px}
+.case-stat-num{font-size:44px;font-weight:700;line-height:1;color:var(--text-primary);letter-spacing:-.02em}
+.case-stat-label{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+.sector-col{display:grid;gap:30px;align-content:start}
+.sector-logos img{height:32px;max-width:132px}
+.sector-logos{gap:14px 20px}
+.logo-more{text-align:center;color:var(--text-muted);font-size:13px;letter-spacing:.04em;margin:26px 0 0}

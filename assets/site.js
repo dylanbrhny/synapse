@@ -401,3 +401,5 @@
   }
   /* === END SIMULATOR BLOCK === */
 })();
+
+(function(){var n=document.querySelector('[data-live-count]'),rows=document.querySelectorAll('.meet-row');if(!n||!rows.length)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;n.textContent='0';rows.forEach(function(r,i){setTimeout(function(){n.textContent=String(i+1);},300+i*450+250);});})();
