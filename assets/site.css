@@ -2122,3 +2122,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .included-list a{color:var(--accent)}
 .segment-note{max-width:820px;margin:28px auto 0}
 @media (max-width:700px){.included-list{grid-template-columns:1fr}.dash-table th:nth-child(4),.dash-table td:nth-child(4){display:none}}
+/* chip polish 2026-10-17 */
+.sector-logos .logo-text{font-size:13px;padding:4px 9px}
+.sector-logos{gap:10px 14px}
+.dash-table td:nth-child(2){min-width:118px}
