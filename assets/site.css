@@ -2126,3 +2126,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .sector-logos .logo-text{font-size:13px;padding:4px 9px}
 .sector-logos{gap:10px 14px}
 .dash-table td:nth-child(2){min-width:118px}
+/* deck logos 2026-10-17 */
+.sector-logos img{height:36px;width:auto;max-width:160px;object-fit:contain}
+.sector-grid{gap:30px 56px}
+.sector-logos{gap:14px 22px}
