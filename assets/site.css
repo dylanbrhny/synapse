@@ -2191,3 +2191,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .case-results.three{grid-template-columns:repeat(3,1fr);max-width:640px}
 @media (max-width:760px){.case-results.three{grid-template-columns:1fr 1fr}}
 #accounts .logo-row{margin-top:24px}
+/* case tiles four */
+.case-results.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.case-results.four{grid-template-columns:1fr 1fr}}
