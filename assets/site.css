@@ -2187,3 +2187,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .case-card{padding:34px 0 10px}
 .case-foot{margin-top:4px}
 @media (max-width:760px){.case-logo,.case-logo svg{width:84px;height:84px}}
+/* case tiles three */
+.case-results.three{grid-template-columns:repeat(3,1fr);max-width:640px}
+@media (max-width:760px){.case-results.three{grid-template-columns:1fr 1fr}}
+#accounts .logo-row{margin-top:24px}
