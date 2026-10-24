@@ -2163,3 +2163,20 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .dash-foot{font-size:12px;color:var(--text-muted);margin:16px 0 0;line-height:1.5}
 .dash-panel{display:flex;flex-direction:column}
 .dash-body{flex:1}
+/* case studies 2026-10-23 */
+.case-glance{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 12px}
+.case-glance div,.case-results div{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:10px;padding:14px 16px}
+.case-glance strong,.case-results strong{display:block;font-size:28px;font-weight:700;line-height:1.1;color:var(--text-primary);letter-spacing:-.01em}
+.case-glance span,.case-results span{display:block;margin-top:4px;font-size:12px;color:var(--text-muted);line-height:1.4}
+.case-glance-note{font-size:13px;color:var(--text-muted);margin:0 0 8px}
+.case-card{padding:30px 0 10px;border-top:1px solid var(--border-subtle)}
+.case-head{display:flex;gap:20px;align-items:center;margin-bottom:14px}
+.case-head-text{min-width:0}
+.case-head h2{margin:0}
+.case-logo{flex:none;width:132px;height:76px;border:1px solid var(--border);border-radius:12px;background:var(--bg-card);display:flex;align-items:center;justify-content:center;gap:9px;color:var(--accent)}
+.case-logo svg{width:26px;height:26px;flex:none}
+.case-logo-name{font-weight:700;font-size:15px;color:var(--text-primary);letter-spacing:.02em;filter:blur(4px);user-select:none}
+.case-kicker{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-muted);margin:0 0 6px}
+.case-results{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 14px}
+.case-foot{font-size:13px;color:var(--text-muted)}
+@media (max-width:760px){.case-glance,.case-results{grid-template-columns:1fr 1fr}.case-head{flex-direction:column;align-items:flex-start}}
