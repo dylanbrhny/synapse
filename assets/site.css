@@ -2205,3 +2205,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .case-anon{font-size:11px;line-height:1.45;color:var(--text-muted);margin:10px 0 0}
 .case-head-text{padding-top:2px}
 @media (max-width:760px){.case-head{grid-template-columns:1fr;gap:16px}.case-logo svg{width:52px;height:52px}}
+/* case note specificity */
+.prose p.case-anon{font-size:11px;line-height:1.45;color:var(--text-muted);margin:10px 0 0;max-width:250px}
+.prose p.case-kicker{margin:0 0 6px}
+.prose p.case-foot{font-size:13px;color:var(--text-muted)}
