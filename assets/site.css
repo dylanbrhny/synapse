@@ -2194,3 +2194,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 /* case tiles four */
 .case-results.four{grid-template-columns:repeat(4,1fr)}
 @media (max-width:760px){.case-results.four{grid-template-columns:1fr 1fr}}
+/* case lockups 2026-10-24 */
+.case-head{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:start}
+.case-brand{min-width:0}
+.case-logo{display:flex;align-items:center;gap:12px;width:auto;height:auto}
+.case-logo svg{width:60px;height:60px;flex:none}
+.case-word{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.case-word b{font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-primary)}
+.case-word span{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-secondary);margin-top:4px}
+.case-anon{font-size:11px;line-height:1.45;color:var(--text-muted);margin:10px 0 0}
+.case-head-text{padding-top:2px}
+@media (max-width:760px){.case-head{grid-template-columns:1fr;gap:16px}.case-logo svg{width:52px;height:52px}}
