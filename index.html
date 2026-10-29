@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pay Per Appointment Cold Calling for Manufacturers | Synapse Mfg</title>
-<meta name="description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and contract value.">
+<meta name="description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and lifetime value.">
 <link rel="canonical" href="https://www.synapsemfg.com/">
 <link rel="alternate" hreflang="en" href="https://www.synapsemfg.com/">
 <link rel="alternate" hreflang="x-default" href="https://www.synapsemfg.com/">
@@ -23,14 +23,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://www.synapsemfg.com/">
 <meta property="og:title" content="Pay Per Appointment Cold Calling for Manufacturers | Synapse Mfg">
-<meta property="og:description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and contract value.">
+<meta property="og:description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and lifetime value.">
 <meta property="og:image" content="https://www.synapsemfg.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Synapse Mfg: cold calling for industrial manufacturers">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pay Per Appointment Cold Calling for Manufacturers | Synapse Mfg">
-<meta name="twitter:description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and contract value.">
+<meta name="twitter:description" content="Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and lifetime value.">
 <meta name="twitter:image" content="https://www.synapsemfg.com/assets/og.png">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -94,7 +94,7 @@
       "@id": "https://www.synapsemfg.com/#webpage",
       "url": "https://www.synapsemfg.com/",
       "name": "Pay Per Appointment Cold Calling for Manufacturers | Synapse Mfg",
-      "description": "Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and contract value.",
+      "description": "Pay per appointment cold calling, exclusively for manufacturers: a dedicated salesperson books buyers onto your calendar under your brand, and you pay per appointment held. Price set from your close rate, deal size and lifetime value.",
       "about": {
         "@id": "https://www.synapsemfg.com/#org"
       },
@@ -115,7 +115,7 @@
         "@type": "BusinessAudience",
         "name": "Industrial manufacturers"
       },
-      "description": "Sales appointments with manufacturing buyers, sold in bundles and counted per qualified meeting held. Pricing is set per client from close rate, deal size and annual contract value."
+      "description": "Sales appointments with manufacturing buyers, sold in bundles and counted per qualified meeting held. Pricing is set per client from close rate, deal size and lifetime value."
     },
     {
       "@type": "BreadcrumbList",
@@ -207,7 +207,7 @@ h1,.page-hero h1,.hero h1{font-weight:400;letter-spacing:-.01em}
 .ppa-calc{max-width:1100px;margin:36px auto 0}
 .ppa-calc-box{border:1px solid var(--border-subtle);border-radius:16px;padding:28px;background:var(--bg-card)}
 .ppa-calc-title{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--accent);margin:0 0 18px}
-.ppa-calc-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ppa-calc-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end}
 .ppa-calc-inputs.two{grid-template-columns:1fr 1fr;max-width:640px}
 .ppa-calc-out.three{grid-template-columns:repeat(3,1fr)}
 .included-note{margin:16px 0 0;font-size:14px;color:var(--text-secondary)}
@@ -221,6 +221,7 @@ h1,.page-hero h1,.hero h1{font-weight:400;letter-spacing:-.01em}
 .adv[open] summary::before{content:"\2212 "}
 .adv .ppa-calc-inputs{margin-top:14px}
 .ppa-calc-out{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.ppa-calc-out[hidden]{display:none}
 .ppa-out{border:1px solid var(--border-subtle);border-radius:12px;padding:18px;background:var(--bg-secondary);display:flex;flex-direction:column;gap:6px}
 .ppa-out-num{font-family:'Cal Sans','Inter',sans-serif;font-size:32px;color:var(--text-primary);line-height:1.1;font-variant-numeric:tabular-nums}
 .ppa-out-label{font-size:11.5px;color:var(--text-muted);line-height:1.45;letter-spacing:.04em;text-transform:uppercase}
@@ -231,6 +232,7 @@ h1,.page-hero h1,.hero h1{font-weight:400;letter-spacing:-.01em}
 .ppa-calc-note{margin:16px 0 0;color:var(--text-secondary);font-size:14px}
 .ppa-calc-note b{color:var(--green);font-weight:600}
 .ppa-field label small{font-size:11px;text-transform:none;letter-spacing:0;color:var(--text-muted);margin-left:4px}
+.ppa-field label small.sub{display:block;margin:3px 0 0}
 .ppa-field input::placeholder{color:var(--text-muted);opacity:.8}
 .hiw{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px;counter-reset:hiw}
 .hiw li{position:relative;padding:24px 24px 24px 76px;border:1px solid var(--border-subtle);border-radius:14px;background:var(--bg-card)}
@@ -473,17 +475,11 @@ u.q{text-decoration:underline;text-decoration-color:var(--accent);text-decoratio
   <div class="section-tag">Pricing</div>
   <h2 class="section-title" id="pricing-title">How is the per-appointment price set?</h2>
   <p class="section-desc">No rate card. You buy <u class="q">qualified</u> meetings in bundles, at a per-meeting price set on the first call from three numbers.</p>
-  <div class="ppa-grid3">
-    <div class="ppa-tile"><div class="ppa-tile-k"><i></i>Input one</div><h3>Close rate</h3><p>How many held meetings become an order.</p></div>
-    <div class="ppa-tile"><div class="ppa-tile-k"><i></i>Input two</div><h3>Deal size</h3><p>What a first order is worth.</p></div>
-    <div class="ppa-tile"><div class="ppa-tile-k"><i></i>Input three</div><h3>Annual contract value</h3><p>What an account is worth in year one.</p></div>
-  </div>
-  <p class="ppa-rule">Together they say what an appointment is worth to you. The price sits under it. No-shows and non-fits never come off your bundle.</p>
   <form class="ppa-calc" id="ppa-calc" aria-describedby="calc-note">
     <div class="ppa-calc-box">
       <p class="ppa-calc-title">What is a qualified meeting worth to you?</p>
       <div class="ppa-calc-inputs">
-        <div class="ppa-field"><label for="calc-deal">Average deal size ($)</label><input id="calc-deal" type="number" inputmode="decimal" min="0" step="1000" value="50000"></div>
+        <div class="ppa-field"><label for="calc-deal">LTV<small class="sub">(average $ lifetime value)</small></label><input id="calc-deal" type="number" inputmode="decimal" min="0" step="1000" value="50000"></div>
         <div class="ppa-field"><label for="calc-margin">Gross margin (%)</label><input id="calc-margin" type="number" inputmode="decimal" min="0" max="100" step="1" value="50"></div>
         <div class="ppa-field"><label for="calc-close">Close rate (%)</label><input id="calc-close" type="number" inputmode="decimal" min="0" max="100" step="1" value="20"></div>
         <div class="ppa-field"><label for="calc-price">Price per meeting ($) <small>optional</small></label><input id="calc-price" type="number" inputmode="decimal" min="0" step="50" placeholder="From your call"></div>
@@ -496,7 +492,7 @@ u.q{text-decoration:underline;text-decoration-color:var(--accent);text-decoratio
         </div>
       </details>
       <div class="ppa-calc-out" aria-live="polite">
-        <div class="ppa-out"><span class="ppa-out-num" id="out-deal">$25,000</span><span class="ppa-out-label">Profit per closed deal</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-deal">$25,000</span><span class="ppa-out-label">Profit per new customer</span></div>
         <div class="ppa-out"><span class="ppa-out-num" id="out-meet">$5,000</span><span class="ppa-out-label">Profit per qualified meeting</span></div>
         <div class="ppa-out"><span class="ppa-out-num" id="out-per">5</span><span class="ppa-out-label">Meetings to close one deal</span></div>
         <div class="ppa-out"><span class="ppa-out-num" id="out-max">$1,667</span><span class="ppa-out-label">Max cost per meeting at a <span id="out-target">3</span>× return</span></div>
@@ -565,7 +561,7 @@ u.q{text-decoration:underline;text-decoration-color:var(--accent);text-decoratio
   <div class="faq-list">
     <details class="sim-details faq-item" open><summary>What is pay per appointment cold calling?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>A dedicated salesperson cold calls the buyers you define, under your brand, and books them onto your calendar. You buy meetings in bundles and pay per <u class="q">qualified</u> meeting held, not per month.</p></div></details>
     <details class="sim-details faq-item"><summary>Do you work outside manufacturing?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>No. We work exclusively with manufacturers: job shops, OEMs, contract manufacturers, component and equipment makers. If you don't make something, we're not the fit.</p></div></details>
-    <details class="sim-details faq-item" open><summary>How is the price set?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>From your close rate, deal size and annual contract value, which say what one held appointment is worth to you. The price is set under that, on the first call, and you pick a bundle size.</p></div></details>
+    <details class="sim-details faq-item" open><summary>How is the price set?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>From your close rate, deal size and lifetime value, which say what one held appointment is worth to you. The price is set under that, on the first call, and you pick a bundle size.</p></div></details>
     <details class="sim-details faq-item"><summary>How do bundles work?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>You buy a bundle of qualified meetings at your per-meeting price. Each meeting held comes off it; no-shows and non-fits don't. When it runs low, top it up or stop.</p></div></details>
     <details class="sim-details faq-item"><summary>Is there a setup fee?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>A small one, to cover training your salesperson on your product and market. Then you choose your first bundle of meetings.</p></div></details>
     <details class="sim-details faq-item"><summary>What counts as a qualified meeting?<span class="sim-details-icon"></span></summary><div class="sim-details-body"><p>The buyer fits your definition, picked a specific slot, confirmed their email and accepted the invite, was told who will call and when, and the meeting happened. Anything less is a lead, and leads never come off your bundle.</p></div></details>
@@ -586,7 +582,7 @@ u.q{text-decoration:underline;text-decoration-color:var(--accent);text-decoratio
 <section class="cta-section" id="cta" aria-labelledby="cta-title">
   <div class="section-tag">Next step</div>
   <p class="section-title" id="cta-title">Bring your three numbers to a 30-minute call.</p>
-  <p class="section-desc">Manufacturers only. Close rate, deal size, contract value: Grant sets your price on the call, or tells you it doesn't fit.</p>
+  <p class="section-desc">Manufacturers only. Close rate, deal size, lifetime value: Grant sets your price on the call, or tells you it doesn't fit.</p>
   <div class="cta-body">
     <a href="https://cal.com/synapsemfg/30min" target="_blank" rel="noopener" class="btn-primary btn-lg" data-cta="final">Pick a time on the calendar<span class="sr-only"> (opens in a new tab)</span></a>
     <p class="cta-note">No pitch deck. No pressure.</p>
