@@ -230,6 +230,8 @@ h1,.page-hero h1,.hero h1{font-weight:400;letter-spacing:-.01em}
 .ppa-flag.bad::before{content:"!";color:#f87171}
 .ppa-calc-note{margin:16px 0 0;color:var(--text-secondary);font-size:14px}
 .ppa-calc-note b{color:var(--green);font-weight:600}
+.ppa-field label small{font-size:11px;text-transform:none;letter-spacing:0;color:var(--text-muted);margin-left:4px}
+.ppa-field input::placeholder{color:var(--text-muted);opacity:.8}
 .hiw{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px;counter-reset:hiw}
 .hiw li{position:relative;padding:24px 24px 24px 76px;border:1px solid var(--border-subtle);border-radius:14px;background:var(--bg-card)}
 .hiw li::before{counter-increment:hiw;content:counter(hiw);position:absolute;left:24px;top:24px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#061020;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center}
@@ -480,16 +482,31 @@ u.q{text-decoration:underline;text-decoration-color:var(--accent);text-decoratio
   <form class="ppa-calc" id="ppa-calc" aria-describedby="calc-note">
     <div class="ppa-calc-box">
       <p class="ppa-calc-title">What is a qualified meeting worth to you?</p>
-      <div class="ppa-calc-inputs two">
-        <div class="ppa-field"><label for="calc-deal">Deal size ($)</label><input id="calc-deal" type="number" inputmode="decimal" min="0" step="500" value="15000"></div>
+      <div class="ppa-calc-inputs">
+        <div class="ppa-field"><label for="calc-deal">Average deal size ($)</label><input id="calc-deal" type="number" inputmode="decimal" min="0" step="1000" value="50000"></div>
+        <div class="ppa-field"><label for="calc-margin">Gross margin (%)</label><input id="calc-margin" type="number" inputmode="decimal" min="0" max="100" step="1" value="50"></div>
         <div class="ppa-field"><label for="calc-close">Close rate (%)</label><input id="calc-close" type="number" inputmode="decimal" min="0" max="100" step="1" value="20"></div>
+        <div class="ppa-field"><label for="calc-price">Price per meeting ($) <small>optional</small></label><input id="calc-price" type="number" inputmode="decimal" min="0" step="50" placeholder="From your call"></div>
       </div>
-      <div class="ppa-calc-out three" aria-live="polite">
-        <div class="ppa-out"><span class="ppa-out-num" id="out-first">$3,000</span><span class="ppa-out-label">One qualified meeting is worth</span></div>
-        <div class="ppa-out"><span class="ppa-out-num" id="out-per">5</span><span class="ppa-out-label">Meetings per new customer</span></div>
-        <div class="ppa-out"><span class="ppa-out-num" id="out-ten">2 deals · $30,000</span><span class="ppa-out-label">What ten meetings turn into</span></div>
+      <details class="adv">
+        <summary>Assumptions</summary>
+        <div class="ppa-calc-inputs two">
+          <div class="ppa-field"><label for="calc-conv">Conversations to set one meeting</label><input id="calc-conv" type="number" inputmode="decimal" min="1" step="1" value="10"></div>
+          <div class="ppa-field"><label for="calc-target">Target return (profit ÷ cost)</label><input id="calc-target" type="number" inputmode="decimal" min="1" step="0.5" value="3"></div>
+        </div>
+      </details>
+      <div class="ppa-calc-out" aria-live="polite">
+        <div class="ppa-out"><span class="ppa-out-num" id="out-deal">$25,000</span><span class="ppa-out-label">Profit per closed deal</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-meet">$5,000</span><span class="ppa-out-label">Profit per qualified meeting</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-per">5</span><span class="ppa-out-label">Meetings to close one deal</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-max">$1,667</span><span class="ppa-out-label">Max cost per meeting at a <span id="out-target">3</span>× return</span></div>
       </div>
-      <p class="ppa-calc-note" id="calc-note"><b>Your per-meeting price sits under the first number.</b> Estimate, not a quote.</p>
+      <div class="ppa-calc-out three" id="calc-row2" aria-live="polite" hidden>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-cac">$0</span><span class="ppa-out-label">Cost per new customer</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-ratio">0×</span><span class="ppa-out-label">Return on that cost</span></div>
+        <div class="ppa-out"><span class="ppa-out-num" id="out-conv">$0</span><span class="ppa-out-label">Cost per conversation</span></div>
+      </div>
+      <p class="ppa-calc-note" id="calc-note"><b>Your per-meeting price sits under the max.</b> Add a price to see cost per new customer and the return on it. Estimate, not a quote.</p>
     </div>
   </form>
 </section>
@@ -595,8 +612,11 @@ function n(id){var v=parseFloat(document.getElementById(id).value);return isFini
 function money(v){return '$'+Math.round(v).toLocaleString('en-US')}
 function num(v,d){return v.toLocaleString('en-US',{maximumFractionDigits:d||0})}
 function out(id,v){document.getElementById(id).textContent=v}
-function run(){var deal=n('calc-deal'),close=Math.min(n('calc-close'),100)/100;
-out('out-first',money(deal*close));out('out-per',close>0?num(1/close,1/close>=10?0:1):'n/a');out('out-ten',num(10*close,1)+' deals · '+money(10*close*deal))}
+function run(){var deal=n('calc-deal'),margin=Math.min(n('calc-margin'),100)/100,close=Math.min(n('calc-close'),100)/100,conv=n('calc-conv'),target=n('calc-target'),priceEl=document.getElementById('calc-price'),price=n('calc-price');
+var perDeal=deal*margin,perMeet=perDeal*close,meets=close>0?1/close:0,max=target>0?perMeet/target:0;
+out('out-deal',money(perDeal));out('out-meet',money(perMeet));out('out-per',close>0?num(meets,meets>=10?0:1):'n/a');out('out-max',target>0?money(max):'n/a');out('out-target',num(target,1));
+var row=document.getElementById('calc-row2'),has=priceEl.value.trim()!==''&&price>0;row.hidden=!has;
+if(has){var cac=price*meets;out('out-cac',close>0?money(cac):'n/a');out('out-ratio',cac>0?num(perDeal/cac,1)+'\u00d7':'n/a');out('out-conv',conv>0?money(price/conv):'n/a')}}
 f.addEventListener('input',run);f.addEventListener('submit',function(e){e.preventDefault();run()});run()})();
 </script>
 <script>
