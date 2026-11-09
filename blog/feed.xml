@@ -6,7 +6,14 @@
   <atom:link href="https://www.synapsemfg.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Notes from the phones on cold calling and appointment setting for industrial manufacturers, from Synapse Mfg.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Nov 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Is B2B Cold Calling Legal for Manufacturers?</title>
+    <link>https://www.synapsemfg.com/blog/is-b2b-cold-calling-legal/</link>
+    <guid isPermaLink="true">https://www.synapsemfg.com/blog/is-b2b-cold-calling-legal/</guid>
+    <pubDate>Mon, 09 Nov 2026 12:00:00 +0000</pubDate>
+    <description>Yes: most B2B sales calls are exempt from the FTC's Telemarketing Sales Rule and the Do Not Call Registry ban. Ask your calling vendor how it handles opt-outs.</description>
+  </item>
   <item>
     <title>Cost of an In-House SDR for a Manufacturer</title>
     <link>https://www.synapsemfg.com/blog/cost-of-an-in-house-sdr-manufacturing/</link>
