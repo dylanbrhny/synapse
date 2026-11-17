@@ -13,7 +13,7 @@
   var Q = [
     { k: 'Company', q: 'What best describes your company?', o: [['We manufacture our own products', 1], ['We distribute industrial products', 1], ['We serve manufacturers or plants (services, contracting, engineering)', 1], ['Something else (software, agency, consulting, retail)', 0]] },
     { k: 'Sells to', q: 'Who are your best customers?', o: [['Manufacturers', 1], ['Government, cities and municipalities', 1], ['Distributors', 1], ['Other', 1]] },
-    { k: 'Customer value', q: 'What is a new customer worth to you over their lifetime?', o: [['Under $25,000', 1], ['$25,000 to $75,000', 1], ['$75,000 to $150,000', 1], ['$150,000+', 1]] },
+    { k: 'Customer value', q: 'What is a new customer worth to you over their lifetime?', o: [['Under $25,000', 0], ['$25,000 to $75,000', 1], ['$75,000 to $150,000', 1], ['$150,000+', 1]] },
     { k: 'Close rate', q: 'Out of 10 qualified first meetings, how many become customers?', o: [['1 or fewer', 1], ['2 to 3', 1], ['4 to 5', 1], ['More than 5', 1], ['Not sure yet', 1]] },
     { k: 'Role', q: 'What is your role?', o: [['Owner or founder', 1], ['President or CEO', 1], ['Sales or marketing leader', 1], ['Something else', 1]] },
     { k: 'Commit', q: 'If this is a fit, how soon can you commit?', o: [['On the call', 1], ['This week', 1], ['Within 30 days', 1], ['31+ days', 0]] },
@@ -22,6 +22,7 @@
   ];
   var DQ = {
     'Company': 'We only work with manufacturers and the industrial companies that sell to them. Every script, list and salesperson we build is for that world, so we would not be the right fit for you.',
+    'Customer value': 'Based on what a new customer is worth to you, we don\'t think you would see a high ROI on our service. Pay per meeting pays off when a new customer is worth $25,000 or more.',
     'Commit': 'Sounds like the timing isn\'t right yet. Our onboarding spots go to companies ready to start within 30 days. Come back when you are, and we\'ll pick it up from there.'
   };
   var TOTAL = Q.length - 1; // the decision maker email step only shows when they answer No to "sole decision maker"
