@@ -301,7 +301,7 @@ html[data-motion="off"] .meet-row,html[data-motion="off"] .reveal,html[data-moti
 .ds{max-width:1100px;margin:0 auto;padding:96px 24px}
 .ds-h{font-family:'Cal Sans','Inter',sans-serif;font-weight:400;text-align:center;font-size:clamp(28px,3.6vw,44px);line-height:1.15;color:var(--text-primary);max-width:860px;margin:0 auto 48px}
 .ds-h + .ds-sub{margin-top:-32px}
-.ds-sub{text-align:center;color:#b4b8c6;max-width:620px;margin:0 auto 48px;line-height:1.6}
+.ds-sub{text-align:center;color:#b4b8c6;max-width:720px;margin:0 auto 48px;line-height:1.6}
 
 /* scroll reveal (only when the script has switched it on) */
 html.rv [data-rv]{opacity:0;transform:translateY(24px);filter:blur(8px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1),filter .8s ease;transition-delay:calc(var(--i,0)*90ms)}
@@ -347,6 +347,39 @@ html.rv [data-rv].in{opacity:1;transform:none;filter:none}
 .who-c h3 .ar{color:var(--accent)}
 .who-note a{color:#8cc4ff;text-underline-offset:3px}
 .who-note{text-align:center;color:var(--text-primary);font-size:17px;line-height:1.6;max-width:640px;margin:32px auto 0}
+
+/* industries mosaic: photo tiles and text tiles of different sizes */
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(150px,auto);grid-auto-flow:dense;gap:14px;list-style:none;margin:0;padding:0}
+.bt{position:relative;overflow:hidden;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-subtle);transition:border-color .3s,box-shadow .3s}
+.bt:hover{border-color:rgba(74,158,255,.45);box-shadow:0 0 28px rgba(74,158,255,.14)}
+.bt-ph img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.bt-ph:hover img{transform:scale(1.06)}
+.bt-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,22,.04),rgba(7,11,22,.38));pointer-events:none}
+.bt-cap{position:absolute;left:12px;bottom:12px;z-index:1;max-width:calc(100% - 24px);padding:5px 10px;border-radius:9px;background:rgba(7,11,22,.84);border:1px solid var(--border);color:#fff;font-size:12px;font-weight:600;line-height:1.3}
+.bt-tx{display:flex;flex-direction:column;justify-content:flex-end;padding:18px 20px}
+.bt-tx.mid{justify-content:center;padding:14px 16px}
+.bt-tx.mid b{font-size:20px}
+.bt-tx.mid span{font-size:13px;margin-top:5px}
+.bt-tx.hot{background:linear-gradient(110deg,var(--bg-card) 42%,rgba(74,158,255,.32))}
+.bt-tx b{font-family:'Cal Sans','Inter',sans-serif;font-weight:400;font-size:23px;line-height:1.15;color:var(--text-primary)}
+.bt-tx span{display:block;margin-top:7px;color:#b4b8c6;font-size:14px;line-height:1.5}
+.mosaic .m1,.mosaic .m10{grid-column:span 2;grid-row:span 2}
+.mosaic .m2,.mosaic .m9,.mosaic .m8,.mosaic .m4,.mosaic .m7{grid-column:span 2}
+@media (min-width:861px){
+  .mosaic{grid-template-columns:repeat(6,1fr);grid-auto-rows:136px;grid-auto-flow:row}
+  .mosaic .m1{grid-column:1/3;grid-row:1/3}
+  .mosaic .m2{grid-column:3/5;grid-row:1}
+  .mosaic .m3{grid-column:5;grid-row:1/3}
+  .mosaic .m4{grid-column:6;grid-row:1/3}
+  .mosaic .m5{grid-column:3;grid-row:2}
+  .mosaic .m6{grid-column:4;grid-row:2}
+  .mosaic .m7{grid-column:1;grid-row:3/5}
+  .mosaic .m8{grid-column:2/4;grid-row:3}
+  .mosaic .m9{grid-column:2/4;grid-row:4}
+  .mosaic .m10{grid-column:4/6;grid-row:3/5}
+  .mosaic .m11{grid-column:6;grid-row:3}
+  .mosaic .m12{grid-column:6;grid-row:4}
+}
 
 /* how it works: numbered steps on a rail that fills as you scroll */
 .hw-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
@@ -584,17 +617,18 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
   <div class="hw-grid">
     <div class="hw-side" data-rv>
       <h2 class="ds-h" id="d-how">How it works</h2>
-      <p class="hw-sub">Seven steps from the first call to plant, maintenance and facilities decision makers on your calendar. We do the work. You take the meetings.</p>
+      <p class="hw-sub">Eight steps from the first call to plant, maintenance and facilities decision makers on your calendar. We do the work. You take the meetings.</p>
       <p class="hw-key">You are buying meetings with buyers who are actively quoting, not meetings with just anyone.</p>
     </div>
     <ol class="hw-steps" id="hw-steps">
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">1</span><div><h3>Your price, from your numbers</h3><p>Close rate, deal size and lifetime value set the price per qualified meeting held. No rate card, no retainer.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">2</span><div><h3>Your salesperson is trained</h3><p>On your services, the plants you sell to and the objections they raise. Then you pick your first bundle of meetings.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">1</span><div><h3>We map your market</h3><p>On the first call we work through your market, your targeting and your script: which accounts, which titles, which regions.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">2</span><div><h3>We screen your call list</h3><p>Hundreds of thousands of outbound calls and carrier network data tell us which numbers connect before anyone dials.</p></div></li>
       <li class="hw-step lit"><span class="hw-n" aria-hidden="true">3</span><div><h3>Your script is written</h3><p>Our head of SDR performance writes it personally, drafts it with your team and tunes it every week.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">4</span><div><h3>You follow every call</h3><p>Your own dashboard link: listen to the calls, see your pipeline and the market intelligence.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">5</span><div><h3>Meetings land on your calendar</h3><p>The buyer picks a slot, confirms, and is reminded the day before.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">6</span><div><h3>Notes after every meeting</h3><p>Our Synapse Notetaker joins under your branding and emails you the notes.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">7</span><div><h3>You pay per meeting held</h3><p>Meetings come in bundles. No-shows are rebooked free. Cancel whenever you want.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">4</span><div><h3>Your pitch is delivered</h3><p>A dedicated salesperson, trained on your services and the objections plants raise, calls them under your brand.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">5</span><div><h3>You follow every call</h3><p>Your own dashboard link: listen to the calls, see your pipeline and the market intelligence.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">6</span><div><h3>Meetings land on your calendar</h3><p>The buyer picks a slot, confirms, and is reminded the day before.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">7</span><div><h3>Notes after every meeting</h3><p>Our Synapse Notetaker joins under your branding and emails you the notes.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">8</span><div><h3>You pay for buyers who are sourcing</h3><p>Only meetings held with a buyer who is actively seeking what you sell count. No-shows are rebooked free. Cancel whenever you want.</p></div></li>
     </ol>
   </div>
 </section>
@@ -679,19 +713,6 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
       </div>
     </div>
   </div>
-</section>
-
-<section class="ds" id="results" aria-labelledby="d-res">
-  <h2 class="ds-h" id="d-res" data-rv>Client results</h2>
-  <p class="ds-sub" data-rv>Synapse Mfg is a cold calling and appointment setting service for industrial service companies. Names kept private, numbers straight from the client dashboard.</p>
-  <ul class="rb" role="list">
-    <li class="rt w2 hot" data-rv><div class="rt-row"><div class="who">Respiratory protection supplier</div><div class="n"><span class="cnt" aria-hidden="true" data-to="20" data-suffix="">20</span><span class="sr-only">20</span><small>meetings</small></div></div><p>Safety and industrial hygiene buyers booked from a cold list. 100% show rate so far, from 4,449 dials.</p></li>
-    <li class="rt w2" data-rv style="--i:1"><div class="rt-row"><div class="who">Level sensor manufacturer</div><div class="n"><span class="cnt" aria-hidden="true" data-to="11" data-suffix="">11</span><span class="sr-only">11</span><small>in 3 weeks</small></div></div><p>Plant and utility buyers on the calendar within three weeks of going live, with three site visits scheduled.</p></li>
-    <li class="rt" data-rv><div class="n"><span class="cnt" aria-hidden="true" data-to="100" data-suffix="k+">100k+</span><span class="sr-only">100k+</span></div><p>Conversations logged with industrial buyers.</p></li>
-    <li class="rt" data-rv style="--i:1"><div class="n">F500</div><p>Accounts where our salespeople have booked meetings.</p></li>
-    <li class="rt" data-rv style="--i:2"><div class="n"><span class="cnt" aria-hidden="true" data-to="8" data-suffix="">8</span><span class="sr-only">8</span></div><p>Countries served.</p></li>
-    <li class="rt hot" data-rv style="--i:3"><div class="n"><span class="cnt" aria-hidden="true" data-to="100" data-suffix="%">100%</span><span class="sr-only">100%</span></div><p>Industrial sector.</p></li>
-  </ul>
 </section>
 
 <section class="ds" aria-labelledby="d-trust" style="padding-top:24px">

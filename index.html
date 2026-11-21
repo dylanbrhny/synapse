@@ -420,7 +420,7 @@ html[data-motion="off"] .meet-row,html[data-motion="off"] .reveal,html[data-moti
 .ds{max-width:1100px;margin:0 auto;padding:96px 24px}
 .ds-h{font-family:'Cal Sans','Inter',sans-serif;font-weight:400;text-align:center;font-size:clamp(28px,3.6vw,44px);line-height:1.15;color:var(--text-primary);max-width:860px;margin:0 auto 48px}
 .ds-h + .ds-sub{margin-top:-32px}
-.ds-sub{text-align:center;color:#b4b8c6;max-width:620px;margin:0 auto 48px;line-height:1.6}
+.ds-sub{text-align:center;color:#b4b8c6;max-width:720px;margin:0 auto 48px;line-height:1.6}
 
 /* scroll reveal (only when the script has switched it on) */
 html.rv [data-rv]{opacity:0;transform:translateY(24px);filter:blur(8px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1),filter .8s ease;transition-delay:calc(var(--i,0)*90ms)}
@@ -466,6 +466,39 @@ html.rv [data-rv].in{opacity:1;transform:none;filter:none}
 .who-c h3 .ar{color:var(--accent)}
 .who-note a{color:#8cc4ff;text-underline-offset:3px}
 .who-note{text-align:center;color:var(--text-primary);font-size:17px;line-height:1.6;max-width:640px;margin:32px auto 0}
+
+/* industries mosaic: photo tiles and text tiles of different sizes */
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(150px,auto);grid-auto-flow:dense;gap:14px;list-style:none;margin:0;padding:0}
+.bt{position:relative;overflow:hidden;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-subtle);transition:border-color .3s,box-shadow .3s}
+.bt:hover{border-color:rgba(74,158,255,.45);box-shadow:0 0 28px rgba(74,158,255,.14)}
+.bt-ph img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.bt-ph:hover img{transform:scale(1.06)}
+.bt-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,22,.04),rgba(7,11,22,.38));pointer-events:none}
+.bt-cap{position:absolute;left:12px;bottom:12px;z-index:1;max-width:calc(100% - 24px);padding:5px 10px;border-radius:9px;background:rgba(7,11,22,.84);border:1px solid var(--border);color:#fff;font-size:12px;font-weight:600;line-height:1.3}
+.bt-tx{display:flex;flex-direction:column;justify-content:flex-end;padding:18px 20px}
+.bt-tx.mid{justify-content:center;padding:14px 16px}
+.bt-tx.mid b{font-size:20px}
+.bt-tx.mid span{font-size:13px;margin-top:5px}
+.bt-tx.hot{background:linear-gradient(110deg,var(--bg-card) 42%,rgba(74,158,255,.32))}
+.bt-tx b{font-family:'Cal Sans','Inter',sans-serif;font-weight:400;font-size:23px;line-height:1.15;color:var(--text-primary)}
+.bt-tx span{display:block;margin-top:7px;color:#b4b8c6;font-size:14px;line-height:1.5}
+.mosaic .m1,.mosaic .m10{grid-column:span 2;grid-row:span 2}
+.mosaic .m2,.mosaic .m9,.mosaic .m8,.mosaic .m4,.mosaic .m7{grid-column:span 2}
+@media (min-width:861px){
+  .mosaic{grid-template-columns:repeat(6,1fr);grid-auto-rows:136px;grid-auto-flow:row}
+  .mosaic .m1{grid-column:1/3;grid-row:1/3}
+  .mosaic .m2{grid-column:3/5;grid-row:1}
+  .mosaic .m3{grid-column:5;grid-row:1/3}
+  .mosaic .m4{grid-column:6;grid-row:1/3}
+  .mosaic .m5{grid-column:3;grid-row:2}
+  .mosaic .m6{grid-column:4;grid-row:2}
+  .mosaic .m7{grid-column:1;grid-row:3/5}
+  .mosaic .m8{grid-column:2/4;grid-row:3}
+  .mosaic .m9{grid-column:2/4;grid-row:4}
+  .mosaic .m10{grid-column:4/6;grid-row:3/5}
+  .mosaic .m11{grid-column:6;grid-row:3}
+  .mosaic .m12{grid-column:6;grid-row:4}
+}
 
 /* how it works: numbered steps on a rail that fills as you scroll */
 .hw-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
@@ -646,7 +679,7 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
   <h2 class="ds-h" id="d-feat" data-rv><span id="pz-feat">Built for meetings that turn into orders, not leads that go nowhere.</span></h2>
   <div class="bento">
     <article class="bc tall" data-rv>
-      <a class="bc-more" href="/how-it-works/#step-7">Learn more<span class="sr-only"> about paying per meeting held</span> <span class="ar" aria-hidden="true">→</span></a>
+      <a class="bc-more" href="#pricing">Learn more<span class="sr-only"> about paying per meeting held</span> <span class="ar" aria-hidden="true">→</span></a>
       <div class="bc-vis">
         <canvas class="stat-cv" id="stat-cv" aria-hidden="true"></canvas>
         <p class="stat-w" id="stat-w"><span class="stat-n" id="stat-n">$0</span> <span class="stat-l">per no-show or non-fit</span></p>
@@ -654,7 +687,7 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
       <div class="bc-txt"><h3>You pay per meeting held</h3><p>No retainer. Meetings come in bundles priced for your business. No-shows are rebooked free and non-fits never come off your bundle.</p></div>
     </article>
     <article class="bc" data-rv style="--i:1">
-      <a class="bc-more" href="/how-it-works/#step-1">Learn more<span class="sr-only"> about what counts as a qualified meeting</span> <span class="ar" aria-hidden="true">→</span></a>
+      <a class="bc-more" href="/how-it-works/#step-8">Learn more<span class="sr-only"> about what counts as a qualified meeting</span> <span class="ar" aria-hidden="true">→</span></a>
       <div class="bc-vis" aria-hidden="true"><div class="bq" id="q">
         <div class="q-head"><span>Buyer</span><span id="pz-col">Named project</span><span>Decision</span><span></span></div>
         <div class="q-row on"><span><b>Plant Manager</b></span><span>New press brake cell</span><span>This quarter</span><span class="q-pill"></span></div>
@@ -666,7 +699,7 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
       <div class="bc-txt"><h3><u>Qualified</u> before it counts</h3><p id="pz-qual">The person who signs, a specific project at or above your minimum deal size, and a decision expected within a year, in the buyer's own words.</p></div>
     </article>
     <article class="bc" data-rv style="--i:2">
-      <a class="bc-more" href="/how-it-works/#step-4">Learn more<span class="sr-only"> about how the calls are made</span> <span class="ar" aria-hidden="true">→</span></a>
+      <a class="bc-more" href="/how-it-works/#step-2">Learn more<span class="sr-only"> about how the calls are made</span> <span class="ar" aria-hidden="true">→</span></a>
       <div class="bc-vis" aria-hidden="true"><div class="dome" id="dome">
         <i class="ring"></i><i class="ring r2"></i><i class="ring r3"></i><div class="arc"></div>
         <span class="dome-f f1">Carrier filters</span><span class="dome-f f2">Blocking apps</span>
@@ -680,65 +713,42 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
 </section>
 
 <section class="ds" id="who" aria-labelledby="d-who" style="padding-top:24px">
-  <h2 class="ds-h" id="d-who" data-rv><span id="pz-who">Built for industrial companies.</span></h2>
-  <p class="ds-sub" data-rv>US and Canada.</p>
-  <ul class="who" role="list">
-    <li class="who-c" data-rv>
-      <span class="who-k">You sell machines</span>
-      <h3>Equipment builders and dealers</h3>
-      <p>You sell machines or systems into plants, your own or other makers'.</p>
-      <ul class="who-eq" role="list"><li>CNC machines</li><li>Packaging lines</li><li>Presses</li><li>Furnaces and ovens</li><li>Conveyors</li><li>Used machinery</li></ul>
-    </li>
-    <li class="who-c" data-rv style="--i:1">
-      <span class="who-k">You make their parts</span>
-      <h3>Contract manufacturers</h3>
-      <p>You run production programs for OEMs.</p>
-      <ul class="who-eq" role="list"><li>Casting</li><li>Forging</li><li>Stamping</li><li>Molding</li><li>Fabrication</li><li>Machining</li></ul>
-    </li>
-    <li class="who-c" data-rv style="--i:2">
-      <span class="who-k">You build plants</span>
-      <h3>Industrial contractors and EPC firms</h3>
-      <p>You design and build plants, expansions and process systems.</p>
-      <ul class="who-eq" role="list"><li>Design-build</li><li>Structural steel</li><li>Process piping</li><li>Industrial electrical</li><li>Millwright and rigging</li></ul>
-    </li>
-    <li class="who-c" data-rv>
-      <span class="who-k">You engineer products</span>
-      <h3>Engineered product makers</h3>
-      <p>You design and make products that OEMs buy in volume.</p>
-      <ul class="who-eq" role="list"><li>Heat exchangers</li><li>Filtration</li><li>Hydraulics</li><li>Custom components</li><li>OEM programs</li></ul>
-    </li>
-    <li class="who-c" data-rv style="--i:1">
-      <span class="who-k">You supply materials</span>
-      <h3>Materials and chemicals suppliers</h3>
-      <p>You supply the materials manufacturers run on.</p>
-      <ul class="who-eq" role="list"><li>Resins and plastics</li><li>Specialty chemicals</li><li>Metals and powders</li><li>Coatings</li><li>Composites</li></ul>
-    </li>
-    <li class="who-c" data-rv style="--i:2">
-      <span class="who-k">You service plants</span>
-      <h3>Industrial service companies</h3>
-      <p>You win large service contracts and projects at plants.</p>
-      <ul class="who-eq" role="list"><li>Maintenance contracts</li><li>Shutdowns and turnarounds</li><li>Equipment relocation</li><li>Industrial cleaning</li><li>Environmental services</li></ul>
-    </li>
+  <h2 class="ds-h" id="d-who" data-rv><span id="pz-who">The high-value industries we work in.</span></h2>
+  <p class="ds-sub" data-rv>Capital equipment builders and dealers. Contract manufacturers running casting, forging, stamping, molding and machining programs. Engineered-component makers, industrial contractors, process-materials suppliers and plant-service firms.</p>
+  <ul class="mosaic" role="list">
+    <li class="bt bt-ph m1" data-rv><img src="/assets/industries/factory-floor.webp" alt="Large machine on a bright factory floor" width="800" height="600" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="bt-cap">Machine tools, presses and automated lines</span></li>
+    <li class="bt bt-tx m2 hot" data-rv style="--i:1"><b>RFQs and capital approvals</b><span>Every sale runs through engineering, sourcing and finance.</span></li>
+    <li class="bt bt-ph m3" data-rv style="--i:2"><img src="/assets/industries/technician.webp" alt="Technician in a hard hat working on an electrical panel" width="800" height="600" loading="lazy" decoding="async" style="object-position:35% 40%"><span class="bt-cap">Shutdowns, turnarounds, maintenance</span></li>
+    <li class="bt bt-tx m4 " data-rv style="--i:3"><b>Who signs</b><span>Plant managers, manufacturing engineers, sourcing leads and capital project managers.</span></li>
+    <li class="bt bt-tx m5 mid" data-rv><b>US + Canada</b><span>Plants and OEMs</span></li>
+    <li class="bt bt-ph m6" data-rv style="--i:1"><img src="/assets/industries/machined-parts.webp" alt="Machined metal parts resting on engineering drawings" width="800" height="600" loading="lazy" decoding="async" style="object-position:45% 50%"><span class="bt-cap">Parts to print</span></li>
+    <li class="bt bt-tx m7 " data-rv style="--i:2"><b>Long qualification cycles</b><span>Quote, sample, first article and approval run for months.</span></li>
+    <li class="bt bt-ph m8" data-rv style="--i:3"><img src="/assets/industries/steel-structure.webp" alt="Workers on a lift under a steel roof structure" width="800" height="600" loading="lazy" decoding="async" style="object-position:60% 55%"><span class="bt-cap">Structural steel, process piping, plant expansions</span></li>
+    <li class="bt bt-tx m9 hot" data-rv><b>Actively quoting</b><span>A named project and a quote in motion, not just anyone.</span></li>
+    <li class="bt bt-ph m10" data-rv style="--i:1"><img src="/assets/industries/process-plant.webp" alt="Process plant with towers and pipework at night" width="800" height="600" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="bt-cap">Resins, specialty chemicals and process materials</span></li>
+    <li class="bt bt-tx m11 mid" data-rv style="--i:2"><b>Job shop to Fortune 500</b><span>Accounts we call</span></li>
+    <li class="bt bt-ph m12" data-rv style="--i:3"><img src="/assets/industries/machining.webp" alt="CNC machine cutting a metal part" width="800" height="600" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="bt-cap">CNC machining</span></li>
   </ul>
-  <p class="who-note" data-rv>Also for automation and system integrators, industrial engineering firms and industrial distributors. Your salespeople stay on quotes and customers. We book the first conversation.</p>
+  <p class="who-note" data-rv>Your salespeople stay on quotes and customers. We book the first conversation.</p>
 </section>
 
 <section class="ds" id="how" aria-labelledby="d-how" style="padding-top:24px">
   <div class="hw-grid">
     <div class="hw-side" data-rv>
       <h2 class="ds-h" id="d-how">How it works</h2>
-      <p class="hw-sub">Seven steps from the first call to buyers on your calendar. We do the work. You take the meetings.</p>
+      <p class="hw-sub">Eight steps from the first call to buyers on your calendar. We do the work. You take the meetings.</p>
       <p class="hw-key">You are buying meetings with buyers who are actively quoting, not meetings with just anyone.</p>
       <a class="btn-ghost" href="/how-it-works/">See the whole process <span aria-hidden="true">→</span></a>
     </div>
     <ol class="hw-steps" id="hw-steps">
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">1</span><div><h3>Your price, from your numbers</h3><p>Close rate, deal size and lifetime value set the price per qualified meeting held. No rate card, no retainer.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">2</span><div><h3>Your salesperson is trained</h3><p>On what you sell, your market and your objections. Then you pick your first bundle of meetings.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">1</span><div><h3>We map your market</h3><p>On the first call we work through your market, your targeting and your script: which accounts, which titles, which regions.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">2</span><div><h3>We screen your call list</h3><p>Hundreds of thousands of outbound calls and carrier network data tell us which numbers connect before anyone dials.</p></div></li>
       <li class="hw-step lit"><span class="hw-n" aria-hidden="true">3</span><div><h3>Your script is written</h3><p>Our head of SDR performance writes it personally, drafts it with your team and tunes it every week.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">4</span><div><h3>You follow every call</h3><p>Your own dashboard link: listen to the calls, see your pipeline and the market intelligence.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">5</span><div><h3>Meetings land on your calendar</h3><p>The buyer picks a slot, confirms, and is reminded the day before.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">6</span><div><h3>Notes after every meeting</h3><p>Our Synapse Notetaker joins under your branding and emails you the notes.</p></div></li>
-      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">7</span><div><h3>You pay per meeting held</h3><p>Meetings come in bundles. No-shows are rebooked free. Cancel whenever you want.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">4</span><div><h3>Your pitch is delivered</h3><p>A dedicated salesperson, trained on what you sell and the objections your market raises, calls it under your brand.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">5</span><div><h3>You follow every call</h3><p>Your own dashboard link: listen to the calls, see your pipeline and the market intelligence.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">6</span><div><h3>Meetings land on your calendar</h3><p>The buyer picks a slot, confirms, and is reminded the day before.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">7</span><div><h3>Notes after every meeting</h3><p>Our Synapse Notetaker joins under your branding and emails you the notes.</p></div></li>
+      <li class="hw-step lit"><span class="hw-n" aria-hidden="true">8</span><div><h3>You pay for buyers who are sourcing</h3><p>Only meetings held with a buyer who is actively seeking what you sell count. No-shows are rebooked free. Cancel whenever you want.</p></div></li>
     </ol>
   </div>
 </section>
@@ -823,19 +833,6 @@ html.rv .rt.in::after{animation:sweep 1.5s ease both;animation-delay:calc(var(--
       </div>
     </div>
   </div>
-</section>
-
-<section class="ds" id="results" aria-labelledby="d-res">
-  <h2 class="ds-h" id="d-res" data-rv>Client results</h2>
-  <p class="ds-sub" data-rv>Synapse Mfg is a cold calling and appointment setting service for industrial manufacturers. Every client makes something. Names kept private, numbers straight from the client dashboard.</p>
-  <ul class="rb" role="list">
-    <li class="rt w2 hot" data-rv><div class="rt-row"><div class="who">Respiratory protection supplier</div><div class="n"><span class="cnt" aria-hidden="true" data-to="20" data-suffix="">20</span><span class="sr-only">20</span><small>meetings</small></div></div><p>Safety and industrial hygiene buyers booked from a cold list. 100% show rate so far, from 4,449 dials.</p></li>
-    <li class="rt w2" data-rv style="--i:1"><div class="rt-row"><div class="who">Level sensor manufacturer</div><div class="n"><span class="cnt" aria-hidden="true" data-to="11" data-suffix="">11</span><span class="sr-only">11</span><small>in 3 weeks</small></div></div><p>Plant and utility buyers on the calendar within three weeks of going live, with three site visits scheduled.</p></li>
-    <li class="rt" data-rv><div class="n"><span class="cnt" aria-hidden="true" data-to="100" data-suffix="k+">100k+</span><span class="sr-only">100k+</span></div><p>Conversations logged with industrial buyers.</p></li>
-    <li class="rt" data-rv style="--i:1"><div class="n">F500</div><p>Accounts where our salespeople have booked meetings.</p></li>
-    <li class="rt" data-rv style="--i:2"><div class="n"><span class="cnt" aria-hidden="true" data-to="8" data-suffix="">8</span><span class="sr-only">8</span></div><p>Countries of manufacturers served.</p></li>
-    <li class="rt hot" data-rv style="--i:3"><div class="n"><span class="cnt" aria-hidden="true" data-to="100" data-suffix="%">100%</span><span class="sr-only">100%</span></div><p>Industrial. Every client makes something.</p></li>
-  </ul>
 </section>
 
 <section class="ds" aria-labelledby="d-trust" style="padding-top:24px">
