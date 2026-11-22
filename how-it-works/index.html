@@ -457,6 +457,12 @@ html[data-motion="off"] .v11 .steps span::before{background:var(--accent);border
 .hj.on .hiw-sec:not(.cur) .hiw-text h2{color:#b4b8c6}
 .hj.on .hiw-sec.cur .hiw-text{transform:translateX(8px)}
 
+.more-q{max-width:900px;margin:0 auto}
+.more-q .section-tag{justify-content:center;margin-bottom:18px}
+.more-q summary h2{font:inherit;font-size:16px;font-weight:600;letter-spacing:0;line-height:1.4;margin:0;color:inherit}
+.prose.more-q .sim-details-body p,.prose.more-q .sim-details-body li{font-size:15px;line-height:1.65;margin-bottom:10px}
+.prose.more-q .sim-details-body ul{padding-left:20px;margin:0 0 4px}
+.more-q summary{cursor:pointer}
 /* ---- lower sections as cards instead of long lists ---- */
 .qa-wrap,.rel{max-width:1100px}
 .qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
@@ -583,50 +589,6 @@ html[data-motion="off"] .v11 .steps span::before{background:var(--accent);border
   <div class="section-divider"><hr></div>
   <section class="hiw-sec" aria-label="Done for you"><p class="hiw-dfy">The entire process is 100% done for you. You just take the meetings.</p></section>
   <div class="section-divider"><hr></div>
-  <section aria-label="Questions manufacturers ask before they book"><div class="prose qa-wrap">
-    <div class="section-tag">Before you book</div>
-    <div class="qa-grid">
-      <article class="qa">
-    <h2 id="appointment-setting">What is appointment setting for manufacturers?</h2>
-    <p>Appointment setting for manufacturers is a service in which a dedicated salesperson cold calls a manufacturer's buyers under that manufacturer's brand and books qualified meetings onto its calendar. With Synapse Mfg, you pay per <u class="q">qualified</u> meeting held, not a monthly retainer.</p>
-    <ul>
-      <li><strong>Who we call:</strong> the engineering, purchasing, production, operations and maintenance titles that specify, approve and use what you make, at job shops, mid-market manufacturers and Fortune 500 plants across the US and Canada. More in <a href="/blog/who-to-cold-call-at-a-manufacturing-company/">who to cold call at a manufacturing company</a>.</li>
-      <li><strong>What we own:</strong> the list, the screening, the calls, the booking, the confirmations and no-show rebooking.</li>
-      <li><strong>What stays with you:</strong> technical qualification, quoting, pricing, closing and the customer relationship.</li>
-    </ul>
-      </article>
-      <article class="qa">
-    <h2 id="hire-vs-outsource">Should you hire a salesperson or outsource the calling?</h2>
-    <p>Outsource when you want buyer conversations without building a calling team, and hire when you're ready to build the data, phone numbers, screening and management around a caller yourself.</p>
-    <ul>
-      <li><strong>Hiring:</strong> plan on 3 to 6 months from the decision to the first productive conversation, and the clock restarts if the caller leaves.</li>
-      <li><strong>Outsourcing:</strong> the salesperson, the list, 20 carrier numbers, the screening and the dashboard arrive as one engagement, with nothing to recruit or ramp.</li>
-      <li><strong>Manufacturers' rep firms:</strong> they sell to their existing network on commission and aren't doing cold outbound, so they rarely reach the accounts you're missing. The account-by-account split: <a href="/blog/manufacturers-rep-firm-vs-sdr/">a manufacturers' rep firm or an SDR for new accounts</a>.</li>
-    </ul>
-    <p>The hire, block by block: <a href="/blog/in-house-bdr-first-90-days/">the first 90 days of an in-house BDR at a manufacturer</a>.</p>
-      </article>
-      <article class="qa">
-    <h2 id="machine-shops">How do machine shops and metal fabricators win new customers by phone?</h2>
-    <p>Machine shops and metal fabricators win new customers by phone when the cold call books a capabilities conversation between the buyer and your owner or estimator, because the drawings and RFQs come out of that conversation.</p>
-    <ul>
-      <li><strong>Who we call:</strong> purchasing, which owns the vendor list; engineering, which owns the drawing; and production, which feels it when a supplier misses.</li>
-      <li><strong>The calls that don't book:</strong> your dashboard logs which supplier holds the part today, why the buyer said no, and when the current contract ends.</li>
-      <li><strong>A fit:</strong> $1M+ in revenue, capacity for new work, and an owner or estimator who can take a capabilities call. The full path is in <a href="/blog/machine-shop-sales-funnel-rfq-to-po/">the machine shop sales funnel, RFQ to PO</a>.</li>
-    </ul>
-      </article>
-      <article class="qa">
-    <h2 id="market-entry">How does a foreign manufacturer enter the North American market by phone?</h2>
-    <p>A foreign manufacturer enters North America by phone when a dedicated salesperson, dialing from US carrier numbers during North American hours, calls US and Canadian buyers under its brand and books the ones who want to talk onto its calendar.</p>
-    <ul>
-      <li><strong>What you don't need first:</strong> a US employee, an office, a network of manufacturers' rep firms, data contracts or a phone system.</li>
-      <li><strong>What you learn before you commit capital:</strong> which incumbents hold the accounts, which objections come up most, and when budgets and supply contracts open.</li>
-      <li><strong>Where meetings land:</strong> on your calendar, in your time zone. A worked example: <a href="/blog/us-market-entry-for-german-manufacturers/">US market entry for German manufacturers</a>.</li>
-    </ul>
-      </article>
-    </div>
-  </div></section>
-
-  <div class="section-divider"><hr></div>
   <section class="results-section" id="proof" aria-labelledby="proof-title">
     <div class="section-tag">Proof</div>
     <h2 class="section-title" id="proof-title">Built for industrial. Proven on the phones.</h2>
@@ -664,6 +626,44 @@ html[data-motion="off"] .v11 .steps span::before{background:var(--accent);border
       <li><a href="/about/">About Synapse Mfg</a>: who runs the calls and who the service is for.</li>
     </ul>
   </div></section>
+  <div class="section-divider"><hr></div>
+  <section aria-label="More questions manufacturers ask"><div class="prose more-q">
+    <div class="section-tag">More questions</div>
+    <details class="sim-details faq-item"><summary><h2 id="appointment-setting">What is appointment setting for manufacturers?</h2><span class="sim-details-icon" aria-hidden="true"></span></summary><div class="sim-details-body">
+    <p>Appointment setting for manufacturers is a service in which a dedicated salesperson cold calls a manufacturer's buyers under that manufacturer's brand and books qualified meetings onto its calendar. With Synapse Mfg, you pay per <u class="q">qualified</u> meeting held, not a monthly retainer.</p>
+    <ul>
+      <li><strong>Who we call:</strong> the engineering, purchasing, production, operations and maintenance titles that specify, approve and use what you make, at job shops, mid-market manufacturers and Fortune 500 plants across the US and Canada. More in <a href="/blog/who-to-cold-call-at-a-manufacturing-company/">who to cold call at a manufacturing company</a>.</li>
+      <li><strong>What we own:</strong> the list, the screening, the calls, the booking, the confirmations and no-show rebooking.</li>
+      <li><strong>What stays with you:</strong> technical qualification, quoting, pricing, closing and the customer relationship.</li>
+    </ul>
+    </div></details>
+    <details class="sim-details faq-item"><summary><h2 id="hire-vs-outsource">Should you hire a salesperson or outsource the calling?</h2><span class="sim-details-icon" aria-hidden="true"></span></summary><div class="sim-details-body">
+    <p>Outsource when you want buyer conversations without building a calling team, and hire when you're ready to build the data, phone numbers, screening and management around a caller yourself.</p>
+    <ul>
+      <li><strong>Hiring:</strong> plan on 3 to 6 months from the decision to the first productive conversation, and the clock restarts if the caller leaves.</li>
+      <li><strong>Outsourcing:</strong> the salesperson, the list, 20 carrier numbers, the screening and the dashboard arrive as one engagement, with nothing to recruit or ramp.</li>
+      <li><strong>Manufacturers' rep firms:</strong> they sell to their existing network on commission and aren't doing cold outbound, so they rarely reach the accounts you're missing. The account-by-account split: <a href="/blog/manufacturers-rep-firm-vs-sdr/">a manufacturers' rep firm or an SDR for new accounts</a>.</li>
+    </ul>
+    <p>The hire, block by block: <a href="/blog/in-house-bdr-first-90-days/">the first 90 days of an in-house BDR at a manufacturer</a>.</p>
+    </div></details>
+    <details class="sim-details faq-item"><summary><h2 id="machine-shops">How do machine shops and metal fabricators win new customers by phone?</h2><span class="sim-details-icon" aria-hidden="true"></span></summary><div class="sim-details-body">
+    <p>Machine shops and metal fabricators win new customers by phone when the cold call books a capabilities conversation between the buyer and your owner or estimator, because the drawings and RFQs come out of that conversation.</p>
+    <ul>
+      <li><strong>Who we call:</strong> purchasing, which owns the vendor list; engineering, which owns the drawing; and production, which feels it when a supplier misses.</li>
+      <li><strong>The calls that don't book:</strong> your dashboard logs which supplier holds the part today, why the buyer said no, and when the current contract ends.</li>
+      <li><strong>A fit:</strong> $1M+ in revenue, capacity for new work, and an owner or estimator who can take a capabilities call. The full path is in <a href="/blog/machine-shop-sales-funnel-rfq-to-po/">the machine shop sales funnel, RFQ to PO</a>.</li>
+    </ul>
+    </div></details>
+    <details class="sim-details faq-item"><summary><h2 id="market-entry">How does a foreign manufacturer enter the North American market by phone?</h2><span class="sim-details-icon" aria-hidden="true"></span></summary><div class="sim-details-body">
+    <p>A foreign manufacturer enters North America by phone when a dedicated salesperson, dialing from US carrier numbers during North American hours, calls US and Canadian buyers under its brand and books the ones who want to talk onto its calendar.</p>
+    <ul>
+      <li><strong>What you don't need first:</strong> a US employee, an office, a network of manufacturers' rep firms, data contracts or a phone system.</li>
+      <li><strong>What you learn before you commit capital:</strong> which incumbents hold the accounts, which objections come up most, and when budgets and supply contracts open.</li>
+      <li><strong>Where meetings land:</strong> on your calendar, in your time zone. A worked example: <a href="/blog/us-market-entry-for-german-manufacturers/">US market entry for German manufacturers</a>.</li>
+    </ul>
+    </div></details>
+  </div></section>
+
   <div class="section-divider"><hr></div>
   <section class="cta-section" id="cta" aria-labelledby="cta-title">
     <div class="section-tag">Next step</div>
@@ -737,6 +737,11 @@ if(hj){var stage=hj.querySelector('.hj-stage'),box=hj.querySelector('.hj-steps')
   /* a link straight to one step lands on it once the layout has switched */
   if(location.hash&&/^#step-\d$/.test(location.hash)){var el=document.querySelector(location.hash);if(el)setTimeout(function(){el.scrollIntoView({block:'center'});paint()},60)}}
 })();
+</script>
+<script>
+/* links to a collapsed question (old pages redirect here) open that row */
+(function(){function go(){var h=location.hash.slice(1);if(!h)return;var el=document.getElementById(h);if(!el)return;var d=el.closest('details');if(d&&!d.open){d.open=true;setTimeout(function(){el.scrollIntoView({block:'center'})},60)}}
+window.addEventListener('hashchange',go);go()})();
 </script>
 </body>
 </html>
