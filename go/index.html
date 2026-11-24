@@ -378,7 +378,7 @@ body.locked{overflow:hidden}
   var m=document.getElementById('qm'),box=document.getElementById('qbox'),qv=document.getElementById('qv'),cv=document.getElementById('cv');
   var step=0,ans=[],qualified=false,calLoaded=false,lastFocus=null,started=false,dms=[],skipped=false;
   var EMAIL=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  function esc(v){return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function esc(v){return String(v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
   function open(src){
     lastFocus=document.activeElement;

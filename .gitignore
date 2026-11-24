@@ -1,2 +1,7 @@
 assets/logos/*.png
 *.ttf
+.claude/
+.env*
+*.pem
+*.key
+.DS_Store

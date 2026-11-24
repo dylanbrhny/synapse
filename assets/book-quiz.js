@@ -72,7 +72,7 @@
   var m, box, qv, cv;
   var step = 0, ans = [], qualified = false, calLoaded = false, lastFocus = null, started = false, dms = [], skipped = false;
 
-  function esc(v) { return String(v).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function esc(v) { return String(v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
   function build() {
     var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
