@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,6 +40,18 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      # GitHub sometimes takes a moment to list a fresh upload, and the deploy step then
+      # stops with "No artifacts named github-pages were found" (seen 2026-11-24, with every
+      # action version, in every region). If the first try fails, wait and try once more:
+      # the job only fails when the second try fails too.
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+      - name: Wait before the second try
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+      - name: Deploy to GitHub Pages (second try)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
