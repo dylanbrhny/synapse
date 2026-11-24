@@ -13,14 +13,18 @@ permissions:
 
 jobs:
   submit:
-    if: github.event.workflow_run.conclusion == 'success'
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      contains(fromJSON('["push","workflow_dispatch"]'), github.event.workflow_run.event) &&
+      github.event.workflow_run.head_repository.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the deployed commit
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
           fetch-depth: 0
+          persist-credentials: false
       - name: Find the previous successful deploy
         id: prev
         env:
@@ -28,8 +32,9 @@ jobs:
           RUN_ID: ${{ github.event.workflow_run.id }}
           WORKFLOW_ID: ${{ github.event.workflow_run.workflow_id }}
         run: |
-          sha=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$WORKFLOW_ID" --branch main --status success --limit 10 \
-            --json databaseId,headSha --jq "[.[] | select(.databaseId < $RUN_ID)][0].headSha // \"\"")
+          runs=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$WORKFLOW_ID" --branch main --status success --limit 10 \
+            --json databaseId,headSha)
+          sha=$(jq -r --argjson run "$RUN_ID" '[.[] | select(.databaseId < $run)][0].headSha // ""' <<<"$runs")
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - name: Submit changed pages
         env:
